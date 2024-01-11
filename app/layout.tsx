@@ -1,12 +1,13 @@
 import { Toaster } from "react-hot-toast";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
+import ActiveSectionContextProvider from "@/context/active-section-context";
+import ThemeSwitch from "@/components/ThemeSwitch";
+import ThemeContextProvider from "@/context/theme-context";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import ActiveSectionContextProvider from "@/context/active-section-context";
-import ThemeSwitch from "@/components/ThemeSwitch";
-import ThemeContextProvider from "@/context/theme-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,8 +34,8 @@ export default function RootLayout({
             {children}
             <Footer />
             <ThemeSwitch />
-
             <Toaster position="top-right" />
+            <SpeedInsights />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>
