@@ -19,7 +19,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="max-w-3xl text-center scroll-mt-[100rem]">
+      className="min-h-screen grid place-content-center max-w-3xl text-center scroll-mt-[100rem]">
       <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div
