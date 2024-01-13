@@ -39,7 +39,7 @@ export default function Intro() {
           height={500}
           quality={95}
           priority={true}
-          className="w-9/12 mx-auto rounded-full shadow-lg"
+          className="w-9/12 mx-auto rounded-full shadow-lg bg-blue-500/[0.03]"
         />
       </motion.div>
       <motion.div
@@ -63,7 +63,7 @@ export default function Intro() {
           </span>{" "}
           <span className="block text-8xl font-extrabold text-transparent drop-shadow-lg">
             <span className="text-stroke">Jim</span>{" "}
-            <span className="text-primary">Alpez</span>
+            <span className="text-primary dark:text-blue-100">Alpez</span>
           </span>
         </h1>
         <h3 className="text-3xl  font-semibold">
@@ -84,7 +84,7 @@ export default function Intro() {
             className="w-fit">
             <Link
               href="#contact"
-              className="bg-primary text-white px-6 py-3 rounded-full">
+              className="bg-primary dark:bg-blue-100 text-blue-100 dark:text-primary font-medium px-6 py-3 rounded-full">
               Get in touch
             </Link>
           </motion.div>
