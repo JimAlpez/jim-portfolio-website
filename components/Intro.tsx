@@ -18,7 +18,7 @@ export default function Intro() {
   return (
     <section
       ref={ref}
-      className="min-h-screen scroll-mt-[100rem] flex flex-col lg:flex-row-reverse gap-3 items-center justify-between w-full max-w-5xl mx-auto">
+      className="min-h-screen scroll-mt-[100rem] flex flex-col lg:flex-row-reverse items-center justify-between w-full max-w-5xl mx-auto">
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         whileInView={{
@@ -30,7 +30,7 @@ export default function Intro() {
             duration: 0.8,
           },
         }}
-        className="flex-1"
+        className="flex-1 py-12"
         viewport={{ once: true, amount: 0.8 }}>
         <Image
           src={JimAlpez}

@@ -58,24 +58,15 @@ export default function Header() {
           )}
         </div>
 
-        <motion.nav
-          initial={isMobile ? { y: -500, opacity: 0, height: 5 } : undefined}
-          animate={
-            isMobile
-              ? {
-                  y: show ? 0 : -100,
-                  opacity: show ? 1 : 0,
-                  height: show ? "100%" : 5,
-                }
-              : undefined
-          }
-          transition={{
-            type: "spring",
-            stiffness: 380,
-            damping: 30,
-          }}
-          className="font-medium">
-          <ul className="flex flex-wrap flex-col md:flex-row items-center justify-end gap-4">
+        <nav className="font-medium overflow-hidden">
+          <ul
+            className={`flex flex-wrap flex-col md:flex-row items-center justify-end gap-4 transition-all duration-500 ${
+              isMobile
+                ? show
+                  ? "mt-0 opacity-100"
+                  : "-mt-72 opacity-0"
+                : "mt-0 opacity-100"
+            }`}>
             {links.map((link) => (
               <li
                 key={link.hash}
@@ -109,7 +100,7 @@ export default function Header() {
               </li>
             ))}
           </ul>
-        </motion.nav>
+        </nav>
       </div>
     </motion.header>
   );
