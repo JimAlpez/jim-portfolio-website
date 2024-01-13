@@ -19,9 +19,14 @@ const Project = ({ title, description, tags, imageUrl }: ProjectProps) => {
   return (
     <motion.div
       ref={ref}
-      style={{
-        scale: scaleProgress,
-        opacity: opacityProgress,
+      initial={{ y: 100 }}
+      whileInView={{
+        y: 0,
+        transition: {
+          type: "spring",
+          bounce: 0.4,
+          duration: 0.8,
+        },
       }}
       className="group mb-3 sm:mb-8 last:mb-0">
       <section className="relative bg-gray-100 max-w-[42rem] rounded-lg border border-black/5 overflow-hidden sm:pr-8 sm:h-[20rem] group-even:pl-8 hover:bg-gray-200 transition">

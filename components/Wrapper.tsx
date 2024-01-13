@@ -29,20 +29,21 @@ export default function Wrapper({ children }: WrapperProps) {
 
   return (
     <>
-      {isLoading && isHome ? (
+      <ThemeContextProvider>
+        <ActiveSectionContextProvider>
+          <Header />
+          {children}
+          <Footer />
+          <ThemeSwitch />
+          <Toaster position="top-right" />
+          <SpeedInsights />
+        </ActiveSectionContextProvider>
+      </ThemeContextProvider>
+      {/* {isLoading && isHome ? (
         <SplashScreen finishLoading={() => setIsLoading(false)} />
       ) : (
-        <ThemeContextProvider>
-          <ActiveSectionContextProvider>
-            <Header />
-            {children}
-            <Footer />
-            <ThemeSwitch />
-            <Toaster position="top-right" />
-            <SpeedInsights />
-          </ActiveSectionContextProvider>
-        </ThemeContextProvider>
-      )}
+        
+      )} */}
     </>
   );
 }

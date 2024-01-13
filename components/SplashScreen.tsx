@@ -24,7 +24,7 @@ export default function SplashScreen({ finishLoading }: SplashScreenProps) {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       finishLoading();
-    }, 5000);
+    }, 1000);
 
     return () => clearTimeout(timeoutId);
   }, [finishLoading, setCount]);
@@ -36,7 +36,7 @@ export default function SplashScreen({ finishLoading }: SplashScreenProps) {
           initial={{ width: 0, left: 0 }}
           animate={{ width: "100%", left: 0 }}
           transition={{ duration: 2, ease: "easeInOut" }}
-          className="h-full bg-blue-500 rounded-full">
+          className="h-full bg-gray-500 rounded-full">
           <motion.div
             initial={{ scale: 1 }}
             animate={{
@@ -44,7 +44,7 @@ export default function SplashScreen({ finishLoading }: SplashScreenProps) {
               height: count >= 100 ? "100vh" : "10px",
             }}
             transition={{ duration: 2, ease: "easeInOut" }}
-            className="h-full bg-blue-500 rounded-full"></motion.div>
+            className="h-full bg-gray-500 rounded-full"></motion.div>
         </motion.div>
       </div>
       <div className="text-5xl font-bold">{count}</div>

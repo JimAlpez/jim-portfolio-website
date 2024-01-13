@@ -8,9 +8,8 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center p-4 gap-20">
+    <main className="flex flex-col items-center p-4">
       <Intro />
-      <SectionDivider />
       <About />
       <Projects />
       <Skills />

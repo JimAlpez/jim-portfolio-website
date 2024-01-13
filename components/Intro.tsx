@@ -18,9 +18,79 @@ export default function Intro() {
   return (
     <section
       ref={ref}
-      id="home"
-      className="min-h-screen grid place-content-center max-w-3xl text-center scroll-mt-[100rem]">
-      <div className="flex items-center justify-center">
+      className="min-h-screen scroll-mt-[100rem] flex flex-col lg:flex-row-reverse gap-3 items-center justify-between w-full max-w-5xl mx-auto">
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        whileInView={{
+          scale: 1,
+          opacity: 1,
+          transition: {
+            type: "spring",
+            bounce: 0.4,
+            duration: 0.8,
+          },
+        }}
+        className="flex-1"
+        viewport={{ once: true, amount: 0.8 }}>
+        <Image
+          src={JimAlpez}
+          alt="Jim Alpez"
+          width={500}
+          height={500}
+          quality={95}
+          priority={true}
+          className="w-9/12 mx-auto rounded-full shadow-lg"
+        />
+      </motion.div>
+      <motion.div
+        initial={{ x: -100, opacity: 0 }}
+        animate={{
+          x: 0,
+          opacity: 1,
+          transition: {
+            type: "spring",
+            bounce: 0.4,
+            duration: 0.8,
+          },
+        }}
+        transition={{
+          duration: 0.5,
+        }}
+        className="flex-1 space-y-6">
+        <h1 className="space-y-1">
+          <span className="pl-6 block text-4xl font-semibold">
+            Hi! I&apos;m
+          </span>{" "}
+          <span className="block text-8xl font-extrabold text-transparent drop-shadow-lg">
+            <span className="text-stroke">Jim</span>{" "}
+            <span className="text-primary">Alpez</span>
+          </span>
+        </h1>
+        <h3 className="text-3xl  font-semibold">
+          Frontend <span className="text-secondary">Web Developer</span>
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+          voluptatum, quo quae possimus neque amet repellendus eos qui accusamus
+        </p>
+        <div>
+          <motion.div
+            whileHover={{
+              scale: 1.2,
+            }}
+            whileTap={{
+              scale: 1,
+            }}
+            className="w-fit">
+            <Link
+              href="#contact"
+              className="bg-primary text-white px-6 py-3 rounded-full">
+              Get in touch
+            </Link>
+          </motion.div>
+        </div>
+      </motion.div>
+      {/* <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
@@ -105,7 +175,7 @@ export default function Intro() {
           className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full text-[1.35rem] focus:scale-[1.15] hover:scale-[1.15] hover:tex-gray-950 active:scale-105 transition cursor-pointer border border-black/10">
           <FaGithubSquare />
         </a>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

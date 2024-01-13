@@ -6,55 +6,127 @@ import clsx from "clsx";
 
 import { links } from "@/lib/data";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { useEffect, useState } from "react";
 
 export default function Header() {
+  const [show, setShow] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <header className="z-[999] relative">
-      <motion.div
-        className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white/80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full"
-        initial={{ y: -100, x: "-50%", opacity: 0 }}
-        animate={{ y: 0, x: "-50%", opacity: 1 }}></motion.div>
+    <motion.header
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      className="z-[999] fixed top-0 left-0 right-0 shadow-lg bg-white/30 shadow-black/[0.03] backdrop-blur-[0.5rem] py-4 px-6">
+      <div className="flex flex-col md:flex-row items-center flex-wrap justify-between w-full max-w-5xl mx-auto">
+        <div className="flex items-center justify-between w-full md:w-auto">
+          <Link href="/" className="text-2xl font-bold">
+            jim<span className="text-secondary">.dev</span>
+          </Link>
+          {isMobile && (
+            <button
+              onClick={() => setShow(!show)}
+              className="grid place-items-center">
+              <svg width="18" height="18" viewBox="0 0 18 18">
+                <Path
+                  stroke={show ? "#3888c4" : "#0f3155"}
+                  d={show ? "M 3 16.5 L 17 2.5" : "M 2 2.5 L 20 2.5"}
+                />
+                <Path
+                  stroke={show ? "transparent" : "#0f3155"}
+                  d="M 2 9.423 L 20 9.423"
+                />
+                <Path
+                  stroke={show ? "#3888c4" : "#0f3155"}
+                  d={show ? "M 3 2.5 L 17 16.346" : "M 2 16.346 L 20 16.346"}
+                />
+              </svg>
+            </button>
+          )}
+        </div>
 
-      <nav className="flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
-        <ul className="flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5">
-          {links.map((link) => (
-            <motion.li
-              key={link.hash}
-              className="relative h-3/4 flex items-center justify-center"
-              initial={{ y: -100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}>
-              <Link
-                className={clsx(
-                  "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition",
-                  {
-                    "text-gray-950": activeSection === link.name,
-                  },
-                )}
-                href={link.hash}
-                onClick={() => {
-                  setActiveSection(link.name);
-                  setTimeOfLastClick(Date.now());
-                }}>
-                {link.name}
+        <motion.nav
+          initial={isMobile ? { y: -500, opacity: 0, height: 5 } : undefined}
+          animate={
+            isMobile
+              ? {
+                  y: show ? 0 : -100,
+                  opacity: show ? 1 : 0,
+                  height: show ? "100%" : 5,
+                }
+              : undefined
+          }
+          transition={{
+            type: "spring",
+            stiffness: 380,
+            damping: 30,
+          }}
+          className="font-medium">
+          <ul className="flex flex-wrap flex-col md:flex-row items-center justify-end gap-4">
+            {links.map((link) => (
+              <li
+                key={link.hash}
+                className="relative flex items-center justify-center">
+                <Link
+                  className={clsx(
+                    "flex w-full items-center justify-center hover:text-secondary p-1 transition",
+                    {
+                      "text-secondary font-semibold":
+                        activeSection === link.name,
+                    },
+                  )}
+                  href={link.hash}
+                  onClick={() => {
+                    setActiveSection(link.name);
+                    setTimeOfLastClick(Date.now());
+                  }}>
+                  {link.name}
 
-                {link.name === activeSection && (
-                  <motion.span
-                    className="bg-gray-200 rounded-full absolute inset-0 -z-10"
-                    layoutId="activeSection"
-                    transition={{
-                      type: "spring",
-                      stiffness: 380,
-                      damping: 30,
-                    }}></motion.span>
-                )}
-              </Link>
-            </motion.li>
-          ))}
-        </ul>
-      </nav>
-    </header>
+                  {link.name === activeSection && (
+                    <motion.span
+                      className="h-[0.17rem] rounded-full bg-secondary absolute bottom-0 left-0 right-0 -z-10"
+                      layoutId="activeSection"
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                      }}></motion.span>
+                  )}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </motion.nav>
+      </div>
+    </motion.header>
   );
 }
+
+type PathProps = {
+  d: string;
+  stroke: string;
+};
+const Path = ({ d, stroke }: PathProps) => (
+  <motion.path
+    fill="transparent"
+    strokeWidth="3"
+    stroke={stroke}
+    strokeLinecap="round"
+    animate={{
+      d: d,
+    }}
+  />
+);
