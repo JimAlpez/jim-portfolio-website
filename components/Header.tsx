@@ -36,26 +36,26 @@ export default function Header() {
           <Link href="/" className="text-2xl font-bold">
             jim<span className="text-secondary">.dev</span>
           </Link>
-          {isMobile && (
-            <button
-              onClick={() => setShow(!show)}
-              className="grid place-items-center">
-              <svg width="18" height="18" viewBox="0 0 18 18">
-                <Path
-                  stroke={show ? "#3888c4" : "#0f3155"}
-                  d={show ? "M 3 16.5 L 17 2.5" : "M 2 2.5 L 20 2.5"}
-                />
-                <Path
-                  stroke={show ? "transparent" : "#0f3155"}
-                  d="M 2 9.423 L 20 9.423"
-                />
-                <Path
-                  stroke={show ? "#3888c4" : "#0f3155"}
-                  d={show ? "M 3 2.5 L 17 16.346" : "M 2 16.346 L 20 16.346"}
-                />
-              </svg>
-            </button>
-          )}
+          <button
+            onClick={() => setShow(!show)}
+            className={`grid place-items-center ${
+              isMobile ? "block" : "hidden"
+            }`}>
+            <svg width="18" height="18" viewBox="0 0 18 18">
+              <Path
+                stroke={show ? "#3888c4" : "#0f3155"}
+                d={show ? "M 3 16.5 L 17 2.5" : "M 2 2.5 L 20 2.5"}
+              />
+              <Path
+                stroke={show ? "transparent" : "#0f3155"}
+                d="M 2 9.423 L 20 9.423"
+              />
+              <Path
+                stroke={show ? "#3888c4" : "#0f3155"}
+                d={show ? "M 3 2.5 L 17 16.346" : "M 2 16.346 L 20 16.346"}
+              />
+            </svg>
+          </button>
         </div>
 
         <nav className="font-medium overflow-hidden">
