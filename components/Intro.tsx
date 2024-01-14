@@ -28,7 +28,7 @@ export default function Intro() {
             type: "spring",
             bounce: 0.4,
             duration: 0.8,
-            delay: 1.8,
+            delay: 2.8,
           },
         }}
         className="flex-1 py-12"
@@ -44,7 +44,7 @@ export default function Intro() {
         />
       </motion.div>
       <motion.div
-        initial={{ x: -30, opacity: 0 }}
+        initial={{ x: -50, opacity: 0 }}
         animate={{
           x: 0,
           opacity: 1,
@@ -52,7 +52,7 @@ export default function Intro() {
             type: "spring",
             bounce: 0.4,
             duration: 0.8,
-            delay: 1.8,
+            delay: 2.8,
           },
         }}
         transition={{
@@ -60,15 +60,15 @@ export default function Intro() {
         }}
         className="flex-1 space-y-6">
         <h1 className="space-y-1">
-          <span className="pl-6 block text-4xl font-semibold">
+          <span className="text-2xl md:text-3xl lg:text-4xl pl-4 md:pl-6 lg:pl-8 font-semibold">
             Hi! I&apos;m
           </span>{" "}
-          <span className="block text-8xl font-extrabold text-transparent drop-shadow-lg">
+          <span className="block text-6xl md:text-7xl lg:text-8xl font-extrabold text-transparent drop-shadow-lg">
             <span className="text-stroke-secondary">Jim</span>{" "}
             <span className="text-primary dark:text-blue-100">Alpez</span>
           </span>
         </h1>
-        <h3 className="text-3xl  font-semibold">
+        <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold">
           Frontend <span className="text-secondary">Web Developer</span>
         </h3>
         <p>

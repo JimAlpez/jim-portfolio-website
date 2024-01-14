@@ -24,7 +24,7 @@ export default function SplashScreen({ finishLoading }: SplashScreenProps) {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       finishLoading();
-    }, 2000);
+    }, 3000);
 
     return () => clearTimeout(timeoutId);
   }, [finishLoading, setCount]);
@@ -33,14 +33,14 @@ export default function SplashScreen({ finishLoading }: SplashScreenProps) {
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
       transition={{
-        duration: 2,
-        delay: 1,
+        duration: 1,
+        delay: 2,
       }}
       className="z-50 fixed top-0 left-0 right-0 bottom-0 bg-blue-100 dark:bg-primary min-h-screen flex items-center justify-between">
       <motion.div
         initial={{ width: "50%" }}
         animate={{ width: 0 }}
-        transition={{ ease: easeOut, duration: 2 }}
+        transition={{ ease: easeOut, duration: 1, delay: 2 }}
         className="bg-primary h-full flex items-center justify-end">
         <h2 className="mr-3 md:mr-6 text-8xl lg:text-9xl xl:text-[10rem] font-extrabold text-transparent drop-shadow-lg text-stroke-secondary">
           jim
@@ -49,7 +49,7 @@ export default function SplashScreen({ finishLoading }: SplashScreenProps) {
       <motion.div
         initial={{ width: "50%" }}
         animate={{ width: 0 }}
-        transition={{ ease: easeOut, duration: 2 }}
+        transition={{ ease: easeOut, duration: 1, delay: 2 }}
         className="bg-secondary h-full flex items-center justify-start">
         <h2 className="ml-3 md:ml-6 text-8xl lg:text-9xl xl:text-[10rem] font-extrabold text-transparent drop-shadow-lg text-stroke-primary">
           div
