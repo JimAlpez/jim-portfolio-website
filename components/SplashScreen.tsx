@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { easeInOut, motion } from "framer-motion";
+import { easeInOut, easeOut, motion } from "framer-motion";
 
 type SplashScreenProps = {
   finishLoading: () => void;
@@ -38,19 +38,19 @@ export default function SplashScreen({ finishLoading }: SplashScreenProps) {
       }}
       className="z-50 fixed top-0 left-0 right-0 bottom-0 bg-blue-100 dark:bg-primary min-h-screen flex items-center justify-between">
       <motion.div
-        initial={{ width: "100%" }}
+        initial={{ width: "50%" }}
         animate={{ width: 0 }}
-        transition={{ ease: easeInOut, duration: 2 }}
-        className="w-full bg-primary h-full flex items-center justify-end">
+        transition={{ ease: easeOut, duration: 2 }}
+        className="bg-primary h-full flex items-center justify-end">
         <h2 className="mr-3 md:mr-6 text-8xl lg:text-9xl xl:text-[10rem] font-extrabold text-transparent drop-shadow-lg text-stroke-secondary">
           jim
         </h2>
       </motion.div>
       <motion.div
-        initial={{ width: "100%" }}
+        initial={{ width: "50%" }}
         animate={{ width: 0 }}
-        transition={{ ease: easeInOut, duration: 2 }}
-        className="w-full bg-secondary h-full flex items-center justify-start">
+        transition={{ ease: easeOut, duration: 2 }}
+        className="bg-secondary h-full flex items-center justify-start">
         <h2 className="ml-3 md:ml-6 text-8xl lg:text-9xl xl:text-[10rem] font-extrabold text-transparent drop-shadow-lg text-stroke-primary">
           div
         </h2>
