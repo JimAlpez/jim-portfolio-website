@@ -65,7 +65,7 @@ export default function Intro() {
           </span>{" "}
           <span className="block text-6xl md:text-7xl lg:text-8xl font-extrabold text-transparent drop-shadow-lg">
             <span className="text-stroke-secondary">Jim</span>{" "}
-            <span className="text-primary dark:text-blue-100">Alpez</span>
+            <span className="text-primary dark:text-blue-50">Alpez</span>
           </span>
         </h1>
         <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold">
@@ -86,7 +86,7 @@ export default function Intro() {
             className="w-fit">
             <Link
               href="#contact"
-              className="bg-primary dark:bg-blue-100 text-blue-100 dark:text-primary font-medium px-6 py-3 rounded-full">
+              className="bg-primary dark:bg-blue-50 text-blue-50 dark:text-primary font-medium px-6 py-3 rounded-full">
               Get in touch
             </Link>
           </motion.div>

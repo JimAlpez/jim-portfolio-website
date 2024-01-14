@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { easeInOut, easeOut, motion } from "framer-motion";
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion";
 
 type SplashScreenProps = {
   finishLoading: () => void;
@@ -31,29 +31,45 @@ export default function SplashScreen({ finishLoading }: SplashScreenProps) {
   return (
     <motion.div
       initial={{ opacity: 1 }}
-      animate={{ opacity: 0 }}
+      animate={{ opacity: 0.5 }}
       transition={{
         duration: 1,
         delay: 2,
       }}
-      className="z-50 fixed top-0 left-0 right-0 bottom-0 bg-blue-100 dark:bg-primary min-h-screen flex items-center justify-between">
+      className="z-50 fixed top-0 left-0 right-0 bottom-0 bg-blue-50 dark:bg-primary min-h-screen overflow-hidden">
       <motion.div
-        initial={{ width: "50%" }}
-        animate={{ width: 0 }}
+        initial={{ marginLeft: 0 }}
+        animate={{ marginLeft: "-100%" }}
         transition={{ ease: easeOut, duration: 1, delay: 2 }}
-        className="bg-primary h-full flex items-center justify-end">
-        <h2 className="mr-3 md:mr-6 text-8xl lg:text-9xl xl:text-[10rem] font-extrabold text-transparent drop-shadow-lg text-stroke-secondary">
-          jim
-        </h2>
+        className="w-full absolute top-0 bottom-0 left-0 overflow-hidden clip-polygon-1 bg-primary h-full flex items-center justify-center">
+        <motion.h2
+          initial={{ opacity: 0, scale: 0.2 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            ease: easeOut,
+            duration: 0.5,
+            delay: 0.2,
+          }}
+          className="tracking-wider text-8xl lg:text-9xl xl:text-[10rem] font-extrabold text-transparent drop-shadow-lg text-stroke-secondary">
+          jim div
+        </motion.h2>
       </motion.div>
       <motion.div
-        initial={{ width: "50%" }}
-        animate={{ width: 0 }}
+        initial={{ marginRight: 0 }}
+        animate={{ marginRight: "-100%" }}
         transition={{ ease: easeOut, duration: 1, delay: 2 }}
-        className="bg-secondary h-full flex items-center justify-start">
-        <h2 className="ml-3 md:ml-6 text-8xl lg:text-9xl xl:text-[10rem] font-extrabold text-transparent drop-shadow-lg text-stroke-primary">
-          div
-        </h2>
+        className="w-full absolute top-0 bottom-0 right-0 overflow-hidden clip-polygon-2 bg-secondary h-full flex items-center justify-center">
+        <motion.h2
+          initial={{ opacity: 0, scale: 0.2 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            ease: easeOut,
+            duration: 0.5,
+            delay: 0.2,
+          }}
+          className="tracking-wider text-8xl lg:text-9xl xl:text-[10rem] font-extrabold text-transparent drop-shadow-lg text-stroke-primary">
+          jim div
+        </motion.h2>
       </motion.div>
       {/* <h1>Loading...</h1>
       <div className="h-4 w-[30rem] border border-red-500 rounded-full">

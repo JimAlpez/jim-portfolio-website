@@ -18,6 +18,18 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".clip-polygon-1": {
+          "clip-path": "polygon(100% 0, 0 0, 0 100%, 0% 100%)",
+        },
+        ".clip-polygon-2": {
+          "clip-path": "polygon(100% 0, 100% 0, 100% 100%, 0% 100%)",
+        },
+      };
+      addUtilities(newUtilities, ["responsive", "hover"]);
+    },
+  ],
   darkMode: "class",
 };
