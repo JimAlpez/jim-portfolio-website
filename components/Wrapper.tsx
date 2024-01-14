@@ -39,11 +39,9 @@ export default function Wrapper({ children }: WrapperProps) {
           <SpeedInsights />
         </ActiveSectionContextProvider>
       </ThemeContextProvider>
-      {/* {isLoading && isHome ? (
+      {isLoading && isHome && (
         <SplashScreen finishLoading={() => setIsLoading(false)} />
-      ) : (
-        
-      )} */}
+      )}
     </>
   );
 }

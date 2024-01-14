@@ -21,13 +21,14 @@ export default function Intro() {
       className="min-h-screen scroll-mt-[100rem] flex flex-col lg:flex-row-reverse items-center justify-between w-full max-w-5xl mx-auto">
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
-        whileInView={{
+        animate={{
           scale: 1,
           opacity: 1,
           transition: {
             type: "spring",
             bounce: 0.4,
             duration: 0.8,
+            delay: 1.8,
           },
         }}
         className="flex-1 py-12"
@@ -43,7 +44,7 @@ export default function Intro() {
         />
       </motion.div>
       <motion.div
-        initial={{ x: -100, opacity: 0 }}
+        initial={{ x: -30, opacity: 0 }}
         animate={{
           x: 0,
           opacity: 1,
@@ -51,6 +52,7 @@ export default function Intro() {
             type: "spring",
             bounce: 0.4,
             duration: 0.8,
+            delay: 1.8,
           },
         }}
         transition={{
@@ -62,7 +64,7 @@ export default function Intro() {
             Hi! I&apos;m
           </span>{" "}
           <span className="block text-8xl font-extrabold text-transparent drop-shadow-lg">
-            <span className="text-stroke">Jim</span>{" "}
+            <span className="text-stroke-secondary">Jim</span>{" "}
             <span className="text-primary dark:text-blue-100">Alpez</span>
           </span>
         </h1>
