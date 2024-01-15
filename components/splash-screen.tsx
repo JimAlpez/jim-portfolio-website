@@ -1,9 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { easeIn, easeInOut, easeOut, motion } from "framer-motion";
-
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { useEffect } from "react";
+import { easeInOut, easeOut, motion } from "framer-motion";
 
 type SplashScreenProps = {
   finishLoading: () => void;
@@ -11,7 +9,7 @@ type SplashScreenProps = {
 
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },
-  visible: (i: any) => {
+  visible: () => {
     return {
       pathLength: 1,
       opacity: 1,
@@ -24,26 +22,13 @@ const draw = {
 };
 
 export default function SplashScreen({ finishLoading }: SplashScreenProps) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCount((prevCount) => {
-        const newCount = prevCount + 1;
-        return newCount <= 100 ? newCount : prevCount;
-      });
-    }, 50);
-
-    return () => clearInterval(intervalId);
-  }, []);
-
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       finishLoading();
     }, 3000);
 
     return () => clearTimeout(timeoutId);
-  }, [finishLoading, setCount]);
+  }, [finishLoading]);
 
   return (
     <motion.div
@@ -54,7 +39,7 @@ export default function SplashScreen({ finishLoading }: SplashScreenProps) {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ ease: easeInOut }}>
+        transition={{ ease: easeInOut, delay: 0.2 }}>
         <h2 className="text-transparent text-stroke-secondary text-9xl font-extrabold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center h-48 w-48 border-4 border-secondary/20 rounded-full">
           J
         </h2>

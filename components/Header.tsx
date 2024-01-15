@@ -33,7 +33,7 @@ export default function Header() {
       transition={{
         delay: 2.8,
       }}
-      className="z-30 fixed top-0 left-0 right-0 shadow-lg bg-blue-50/30 dark:bg-primary/30 shadow-black/[0.03] backdrop-blur-[0.5rem] py-4 px-6">
+      className="z-30 fixed top-0 left-0 right-0 shadow-lg bg-blue-50/50 dark:bg-primary/50 shadow-black/[0.03] backdrop-blur-[0.5rem] py-4 px-6">
       <div className="flex flex-col md:flex-row items-center flex-wrap justify-between w-full max-w-5xl mx-auto">
         <div className="flex items-center justify-between w-full md:w-auto">
           <Link href="/" className="text-2xl font-bold">
@@ -50,8 +50,9 @@ export default function Header() {
                 d={show ? "M 3 16.5 L 17 2.5" : "M 2 2.5 L 20 2.5"}
               />
               <Path
-                stroke={show ? "transparent" : "#0f3155"}
+                stroke="#0f3155"
                 d="M 2 9.423 L 20 9.423"
+                opacity={show ? 0 : 1}
               />
               <Path
                 stroke={show ? "#3888c4" : "#0f3155"}
@@ -91,7 +92,7 @@ export default function Header() {
 
                   {link.name === activeSection && (
                     <motion.span
-                      className="h-[0.17rem] rounded-full bg-secondary absolute bottom-0 left-0 right-0 -z-10"
+                      className="h-1 w-1 rounded-full bg-secondary absolute bottom-0 left-1/2 -translate-x-1/2 -z-10"
                       layoutId="activeSection"
                       transition={{
                         type: "spring",
@@ -109,18 +110,13 @@ export default function Header() {
   );
 }
 
-type PathProps = {
-  d: string;
-  stroke: string;
-};
-const Path = ({ d, stroke }: PathProps) => (
+const Path = ({ ...props }: any) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
-    stroke={stroke}
     strokeLinecap="round"
     animate={{
-      d: d,
+      ...props,
     }}
   />
 );

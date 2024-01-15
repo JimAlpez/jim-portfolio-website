@@ -5,12 +5,12 @@ import { Toaster } from "react-hot-toast";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import ActiveSectionContextProvider from "@/context/active-section-context";
-import ThemeSwitch from "@/components/ThemeSwitch";
+import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 import { usePathname } from "next/navigation";
-import SplashScreen from "./SplashScreen";
+import SplashScreen from "./splash-screen";
 
 type WrapperProps = {
   children: ReactNode;
@@ -22,10 +22,10 @@ export default function Wrapper({ children }: WrapperProps) {
   const [isLoading, setIsLoading] = useState(isHome);
 
   useEffect(() => {
-    if (isLoading) {
-      return;
+    if (isHome) {
+      setIsLoading(true);
     }
-  }, [isLoading]);
+  }, [isHome]);
 
   return (
     <>

@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment } from "react";
-import SectionHeading from "./SectionHeading";
+import SectionHeading from "./section-heading";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
@@ -19,8 +19,12 @@ export default function Experience() {
     <section
       ref={ref}
       id="experience"
-      className="scroll-mt-28 text-center space-y-6">
-      <SectionHeading>My experience</SectionHeading>
+      className="w-full max-w-5xl mx-auto py-12 px-4 scroll-mt-16">
+      <SectionHeading
+        primaryText="My"
+        secondaryText="Portfolio"
+        shadowText="Works"
+      />
       <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => (
           <Fragment key={index}>
