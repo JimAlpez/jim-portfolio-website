@@ -5,12 +5,12 @@ import { Toaster } from "react-hot-toast";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import ActiveSectionContextProvider from "@/context/active-section-context";
-import ThemeSwitch from "@/components/theme-switch";
+import ThemeSwitch from "@/components/ThemeSwitch";
 import ThemeContextProvider from "@/context/theme-context";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { usePathname } from "next/navigation";
-import SplashScreen from "./splash-screen";
+import SplashScreen from "./SplashScreen";
 
 type WrapperProps = {
   children: ReactNode;

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Wrapper from "@/components/wrapper";
+import Wrapper from "@/components/Wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 

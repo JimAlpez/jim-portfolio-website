@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 
-import SectionHeading from "./section-heading";
-import Section from "./section";
+import SectionHeading from "./SectionHeading";
+import Section from "./Section";
 
 export default function About() {
   return (

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { easeInOut, motion } from "framer-motion";
 
 import { useSectionInView } from "@/lib/hooks";
-import SectionHeading from "./section-heading";
+import SectionHeading from "./SectionHeading";
 import Image1 from "@/public/corpcomment.png";
 import { FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";

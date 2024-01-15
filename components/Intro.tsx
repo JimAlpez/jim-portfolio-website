@@ -15,7 +15,7 @@ import { FaGithubSquare } from "react-icons/fa";
 import { BiSolidMessageRoundedDots } from "react-icons/bi";
 import { RiBlazeLine } from "react-icons/ri";
 import { IoLogoReact } from "react-icons/io5";
-import Section from "./section";
+import Section from "./Section";
 
 export default function Intro() {
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();

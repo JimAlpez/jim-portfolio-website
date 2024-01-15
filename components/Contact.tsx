@@ -4,10 +4,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 
-import SectionHeading from "./section-heading";
+import SectionHeading from "./SectionHeading";
 import { sendEmail } from "@/actions/sendEmail";
-import SubmitBtn from "./submit-button";
-import Section from "./section";
+import SubmitBtn from "./SubmitButton";
+import Section from "./Section";
 
 export default function Contact() {
   const [email, setEmail] = useState("");
