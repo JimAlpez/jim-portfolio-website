@@ -13,7 +13,7 @@ export default function About() {
         secondaryText="Me"
         shadowText="Resume"
       />
-      <div className="flex flex-col md:flex-row items-center gap-5 justify-between">
+      <div className="flex flex-col md:flex-row items-center gap-5 justify-between overflow-hidden">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{
