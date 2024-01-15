@@ -2,14 +2,13 @@
 
 import { ReactNode, useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { usePathname } from "next/navigation";
 
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import ThemeSwitch from "@/components/ThemeSwitch";
 import ThemeContextProvider from "@/context/theme-context";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
-import { usePathname } from "next/navigation";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import SplashScreen from "./SplashScreen";
 
 type WrapperProps = {
@@ -36,7 +35,6 @@ export default function Wrapper({ children }: WrapperProps) {
           <Footer />
           <ThemeSwitch />
           <Toaster position="top-right" />
-          <SpeedInsights />
         </ActiveSectionContextProvider>
       </ThemeContextProvider>
       {isLoading && isHome && (
