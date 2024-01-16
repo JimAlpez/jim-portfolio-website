@@ -19,7 +19,7 @@ export default function Section({ children, id, sectionView }: sectionProps) {
   return (
     <section
       ref={ref}
-      className="w-full max-w-5xl mx-auto py-12 px-4 scroll-mt-16"
+      className="w-full max-w-5xl mx-auto scroll-mt-16"
       id={id}>
       {children}
     </section>

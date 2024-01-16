@@ -1,55 +1,89 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 import SectionHeading from "./SectionHeading";
 import Section from "./Section";
+import JimAlpez from "@/public/jim-alpez.png";
+import { FiUser } from "react-icons/fi";
+import { FiPhone } from "react-icons/fi";
+import { TfiEmail } from "react-icons/tfi";
+import { FaHeadphones } from "react-icons/fa6";
+import { MdLocalMovies } from "react-icons/md";
 
 export default function About() {
   return (
     <Section sectionView="About" id="about">
-      <SectionHeading
-        primaryText="About"
-        secondaryText="Me"
-        shadowText="Resume"
-      />
-      <div className="flex flex-col md:flex-row items-center gap-5 justify-between overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            transition: {
-              type: "spring",
-              bounce: 0.4,
-              duration: 0.8,
-              delay: 0.2,
-            },
-          }}
-          className="flex-1">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, dolor.
-          Aliquam quos, voluptate aliquid voluptatibus, quisquam fuga illum
-          nulla aperiam sit aspernatur corrupti possimus temporibus tempora quae
-          repudiandae quia mollitia.
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            transition: {
-              type: "spring",
-              bounce: 0.4,
-              duration: 0.8,
-              delay: 0.2,
-            },
-          }}
-          className="flex-1">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
-          repudiandae eius similique, aut sunt debitis beatae nulla accusantium?
-          Ipsa sapiente perferendis quasi eos consequuntur, atque placeat
-          accusantium sequi doloremque? Mollitia!
-        </motion.div>
+      <div className="grid grid-cols-2 place-items-center gap-10 px-4 py-20 overflow-hidden">
+        <div className="col-span-1">
+          <div className="relative p-6">
+            <Image
+              src={JimAlpez}
+              alt="Jim Alpez"
+              width={500}
+              height={500}
+              quality={95}
+              className=""
+            />
+            <div className="absolute top-0 left-0 h-40 w-40 border-t-8 border-l-8 border-secondary"></div>
+            <div className="absolute bottom-0 right-0 h-40 w-40 border-b-8 border-r-8 border-secondary"></div>
+          </div>
+        </div>
+        <div className="col-span-1">
+          <SectionHeading
+            primaryText="About"
+            secondaryText="Me"
+            shadowText="Resume"
+          />
+          <div className="space-y-12">
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia
+              magnam, et ex ullam eligendi officiis nemo iure consequuntur dolor
+              quod, accusamus quisquam optio odio eveniet. Nisi ab sunt sint
+              doloribus!
+            </p>
+            <div className="flex items-center gap-12">
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <FiUser className="text-secondary text-2xl" />{" "}
+                  <span className="font-semibold">Name</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <FiPhone className="text-secondary text-2xl" />{" "}
+                  <span className="font-semibold">Phone</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <TfiEmail className="text-secondary text-2xl" />{" "}
+                  <span className="font-semibold">Email</span>
+                </div>
+              </div>
+              <div className="font-bold flex flex-col gap-3">
+                <span>:</span>
+                <span>:</span>
+                <span>:</span>
+              </div>
+              <div className="text-secondary font-medium flex flex-col gap-3">
+                <span>Jim Alpez</span>
+                <span>9760888072</span>
+                <span>jim.alpez06@gmail.com</span>
+              </div>
+            </div>
+            <div className="space-y-3">
+              <h4 className="text-2xl font-bold">My Interests</h4>
+              <div className="flex items-center gap-5">
+                <div className="flex items-center gap-3">
+                  <FaHeadphones className="text-secondary text-3xl" />{" "}
+                  <span className="font-semibold">Music</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <MdLocalMovies className="text-secondary text-3xl" />{" "}
+                  <span className="font-semibold">Movie</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </Section>
   );

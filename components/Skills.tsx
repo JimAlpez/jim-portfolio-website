@@ -2,48 +2,22 @@
 
 import { motion } from "framer-motion";
 
-import { skillsData } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
-import { useSectionInView } from "@/lib/hooks";
-
-const fadeInAnimationsVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.05 * index,
-    },
-  }),
-};
+import Section from "./Section";
 
 export default function Skills() {
-  const { ref } = useSectionInView("Skills");
-
   return (
-    <section
-      ref={ref}
-      id="skills"
-      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40 space-y-6">
-      <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
-        {skillsData.map((skill, index) => (
-          <motion.li
-            className="bg-white border border-black/10 rounded-xl px-5 py-3"
-            key={index}
-            variants={fadeInAnimationsVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{
-              once: true,
-            }}
-            custom={index}>
-            {skill}
-          </motion.li>
-        ))}
-      </ul>
-    </section>
+    <Section sectionView="Skills" id="skills">
+      <div className="px-4 py-20">
+        <SectionHeading
+          primaryText="My"
+          secondaryText="Expertise"
+          shadowText="Skills"
+        />
+        <h2 className="text-secondary font-bold text-6xl text-center">
+          Skills Here
+        </h2>
+      </div>
+    </Section>
   );
 }
