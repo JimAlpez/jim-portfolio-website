@@ -6,15 +6,9 @@ import { motion } from "framer-motion";
 
 import JimAlpez from "@/public/jim-alpez.png";
 import Background from "@/public/background-intro.jpg";
-import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
-
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/hi";
-import { FaGithubSquare } from "react-icons/fa";
 import { BiSolidMessageRoundedDots } from "react-icons/bi";
 import { RiBlazeLine } from "react-icons/ri";
-import { IoLogoReact } from "react-icons/io5";
 import Section from "./Section";
 
 export default function Intro() {
@@ -159,7 +153,7 @@ export default function Intro() {
                 <RiBlazeLine className="text-2xl absolute -top-5 -right-5 rotate-[30deg]" />
                 <Link
                   href="#contact"
-                  className="hover:shadow-lg bg-primary dark:bg-blue-50 text-blue-50 dark:text-primary font-medium px-6 py-3 rounded flex items-center gap-2"
+                  className="hover:shadow-lg bg-primary hover:bg-secondary dark:bg-blue-50 text-blue-50 hover:text-blue-50 dark:text-primary font-medium px-6 py-3 rounded flex items-center gap-2"
                   onClick={() => {
                     setActiveSection("Contact");
                     setTimeOfLastClick(Date.now());

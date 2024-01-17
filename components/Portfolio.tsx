@@ -75,14 +75,13 @@ const Project = ({ data, activeTab }: any) => {
         {filteredData.slice(0, 6).map((item: any, i: any) => (
           <motion.div
             key={item.id}
-            initial={{ opacity: 0, scale: 0.6 }}
+            initial={{ opacity: 0 }}
             whileInView={{
               opacity: 1,
-              scale: 1,
               transition: {
                 ease: easeInOut,
-                duration: 0.3,
-                delay: 0.1 * i,
+                duration: 0.5,
+                delay: 0.2 * i,
               },
             }}
             className="space-y-2 relative rounded-xl border border-blue-100 bg-gradient-to-br from-blue-200/50 dark:from-sky-800/50 dark:border-sky-900 p-4 shadow-md shadow-black/10 dark:shadow-white/10">

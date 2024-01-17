@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 import SectionHeading from "./SectionHeading";
 import Section from "./Section";
-import JimAlpez from "@/public/jim-alpez.png";
+import WFH from "@/public/WFH.jpg";
 import { FiUser } from "react-icons/fi";
 import { FiPhone } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
@@ -15,19 +15,27 @@ import { MdLocalMovies } from "react-icons/md";
 export default function About() {
   return (
     <Section sectionView="About" id="about">
-      <div className="grid grid-cols-2 place-items-center gap-10 px-4 py-20 overflow-hidden">
-        <div className="col-span-1">
-          <div className="relative p-6">
+      <div className="grid grid-cols-2 place-items-center gap-10 px-4 py-20">
+        <div className="col-span-1 h-full w-full grid place-items-center">
+          <div className="relative p-6 w-full">
             <Image
-              src={JimAlpez}
+              src={WFH}
               alt="Jim Alpez"
               width={500}
               height={500}
               quality={95}
-              className=""
+              className="absolute top-0 left-0 w-9/12 shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-[1.15] hover:z-10"
             />
-            <div className="absolute top-0 left-0 h-40 w-40 border-t-8 border-l-8 border-secondary"></div>
-            <div className="absolute bottom-0 right-0 h-40 w-40 border-b-8 border-r-8 border-secondary"></div>
+            <Image
+              src={WFH}
+              alt="Jim Alpez"
+              width={500}
+              height={500}
+              quality={95}
+              className="absolute bottom-0 right-0 w-9/12 shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-[1.15] hover:z-10"
+            />
+            {/* <div className="absolute top-0 left-0 h-40 w-40 border-t-8 border-l-8 border-secondary"></div>
+            <div className="absolute bottom-0 right-0 h-40 w-40 border-b-8 border-r-8 border-secondary"></div> */}
           </div>
         </div>
         <div className="col-span-1">
@@ -82,6 +90,21 @@ export default function About() {
                 </div>
               </div>
             </div>
+            <motion.div
+              whileHover={{
+                scale: 1.2,
+              }}
+              whileTap={{
+                scale: 1,
+              }}
+              className="group w-fit">
+              <a
+                href="CV.pdf"
+                download
+                className="hover:shadow-lg bg-primary hover:bg-secondary dark:bg-blue-50 text-blue-50 hover:text-blue-50 dark:text-primary font-medium px-6 py-3 rounded flex items-center gap-2">
+                Download CV
+              </a>
+            </motion.div>
           </div>
         </div>
       </div>

@@ -23,25 +23,7 @@ export default function Experience() {
               <h3 className="text-3xl font-bold">Education</h3>
             </div>
             <div className="px-4 space-y-8">
-              {educationData.map((item) => (
-                <div key={item.title} className="flex items-start gap-10">
-                  <div className="p-2 flex flex-col items-center gap-[5px]">
-                    <div className="rounded-full h-4 w-4 bg-secondary ring-offset-4 ring-1"></div>
-                    <div className="h-16 w-[1px] bg-secondary/50 rounded-full"></div>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-2xl font-bold line-clamp-1">
-                      {item.title}
-                    </h4>
-                    <h5 className="text-primary/70 dark:text-blue-50/70 text-lg font-bold line-clamp-1">
-                      {item.subTitle}
-                    </h5>
-                    <div className="text-sm font-medium text-secondary flex items-center gap-2 mt-4">
-                      <FaCalendarAlt /> {item.date}
-                    </div>
-                  </div>
-                </div>
-              ))}
+              {educationData.map((item) => template(item))}
             </div>
           </div>
           <div className="flex-1 space-y-10">
@@ -50,25 +32,7 @@ export default function Experience() {
               <h3 className="text-3xl font-bold">Experiences</h3>
             </div>
             <div className="px-4 space-y-8">
-              {experiencesData.map((item) => (
-                <div key={item.title} className="flex items-start gap-10">
-                  <div className="p-2 flex flex-col items-center gap-[5px]">
-                    <div className="rounded-full h-4 w-4 bg-secondary ring-offset-4 ring-1"></div>
-                    <div className="h-16 w-[1px] bg-secondary/50 rounded-full"></div>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-2xl font-bold line-clamp-1">
-                      {item.title}
-                    </h4>
-                    <h5 className="text-primary/70 dark:text-blue-50/70 text-lg font-bold line-clamp-1">
-                      {item.subTitle}
-                    </h5>
-                    <div className="text-sm font-medium text-secondary flex items-center gap-2 mt-4">
-                      <FaCalendarAlt /> {item.date}
-                    </div>
-                  </div>
-                </div>
-              ))}
+              {experiencesData.map((item) => template(item))}
             </div>
           </div>
         </div>
@@ -76,3 +40,23 @@ export default function Experience() {
     </Section>
   );
 }
+
+const template = (item: any) => {
+  return (
+    <div key={item.title} className="flex items-start gap-10">
+      <div className="p-2 flex flex-col items-center gap-[5px]">
+        <div className="rounded-full h-4 w-4 bg-secondary ring-offset-4 ring-1"></div>
+        <div className="h-16 w-[1px] bg-secondary/50 rounded-full"></div>
+      </div>
+      <div className="flex-1">
+        <h4 className="text-2xl font-bold line-clamp-1">{item.title}</h4>
+        <h5 className="text-primary/70 dark:text-blue-50/70 text-lg font-bold line-clamp-1">
+          {item.subTitle}
+        </h5>
+        <div className="text-sm font-medium text-secondary flex items-center gap-2 mt-4">
+          <FaCalendarAlt /> {item.date}
+        </div>
+      </div>
+    </div>
+  );
+};
