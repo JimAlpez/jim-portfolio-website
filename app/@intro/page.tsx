@@ -9,9 +9,9 @@ import Background from "@/public/background-intro.jpg";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { BiSolidMessageRoundedDots } from "react-icons/bi";
 import { RiBlazeLine } from "react-icons/ri";
-import Section from "./Section";
+import Section from "@/components/section";
 
-export default function Intro() {
+export default function IntroSection() {
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
@@ -25,7 +25,7 @@ export default function Intro() {
 
         <div className="-z-10 absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-br from-blue-50/70 via-blue-100/70 to-blue-200/70 dark:from-sky-800/70 dark:via-sky-900/70 dark:to-sky-950/70"></div>
 
-        <div className="md:min-h-screen flex flex-col lg:flex-row-reverse items-center justify-between w-full max-w-5xl mx-auto">
+        <div className="min-h-screen flex flex-col lg:flex-row-reverse items-center justify-between w-full max-w-5xl mx-auto">
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{
@@ -38,7 +38,7 @@ export default function Intro() {
                 delay: 2.8,
               },
             }}
-            className="flex-1"
+            className="flex-1 pt-28 md:pt-0"
             viewport={{ once: true, amount: 0.8 }}>
             <Image
               src={JimAlpez}
@@ -50,7 +50,7 @@ export default function Intro() {
               className="w-9/12 mx-auto rounded-full shadow-lg bg-blue-500/[0.03]"
             />
           </motion.div>
-          <div className="flex-1 space-y-6">
+          <div className="flex-1 space-y-6 p-6 md:-0">
             <h1 className="space-y-1">
               <motion.span
                 initial={{ x: -50, opacity: 0 }}
@@ -144,13 +144,13 @@ export default function Intro() {
                   },
                 }}
                 whileHover={{
-                  scale: 1.2,
+                  scale: 1.1,
                 }}
                 whileTap={{
                   scale: 1,
                 }}
                 className="group w-fit relative">
-                <RiBlazeLine className="text-2xl absolute -top-5 -right-5 rotate-[30deg]" />
+                <RiBlazeLine className="text-2xl absolute -top-5 -right-5 rotate-[30deg] animate-pulse group-hover:animate-none" />
                 <Link
                   href="#contact"
                   className="hover:shadow-lg bg-primary hover:bg-secondary dark:bg-blue-50 text-blue-50 hover:text-blue-50 dark:text-primary font-medium px-6 py-3 rounded flex items-center gap-2"
@@ -159,7 +159,7 @@ export default function Intro() {
                     setTimeOfLastClick(Date.now());
                   }}>
                   <BiSolidMessageRoundedDots className="text-2xl animate-bounce group-hover:animate-none" />{" "}
-                  Let&apos;s Talk
+                  Get in touch
                 </Link>
               </motion.div>
             </div>

@@ -5,11 +5,11 @@ import { Toaster } from "react-hot-toast";
 import { usePathname } from "next/navigation";
 
 import ActiveSectionContextProvider from "@/context/active-section-context";
-import ThemeSwitch from "@/components/ThemeSwitch";
+import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import SplashScreen from "./SplashScreen";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import SplashScreen from "./splash-screen";
 
 type WrapperProps = {
   children: ReactNode;

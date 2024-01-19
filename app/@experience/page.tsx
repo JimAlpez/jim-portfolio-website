@@ -1,13 +1,13 @@
 "use client";
 
 import { educationData, experiencesData } from "@/lib/data";
-import Section from "./Section";
-import SectionHeading from "./SectionHeading";
+import Section from "@/components/section";
+import SectionHeading from "@/components/section-heading";
 import { FaGraduationCap } from "react-icons/fa6";
 import { MdWorkHistory } from "react-icons/md";
 import { FaCalendarAlt } from "react-icons/fa";
 
-export default function Experience() {
+export default function ExperienceSection() {
   return (
     <Section sectionView="Experience" id="experience">
       <div className="px-4 py-20">
@@ -16,7 +16,7 @@ export default function Experience() {
           secondaryText="Journey"
           shadowText="Experience"
         />
-        <div className="flex justify-between gap-5">
+        <div className="flex flex-col md:flex-row justify-between gap-5">
           <div className="flex-1 space-y-10">
             <div className="flex items-center gap-5">
               <FaGraduationCap className="text-secondary text-6xl" />{" "}
@@ -45,7 +45,7 @@ const template = (item: any) => {
   return (
     <div key={item.title} className="flex items-start gap-10">
       <div className="p-2 flex flex-col items-center gap-[5px]">
-        <div className="rounded-full h-4 w-4 bg-secondary ring-offset-4 ring-1"></div>
+        <div className="rounded-full h-4 w-4 bg-secondary ring-offset-4 ring-1 animate-bounce"></div>
         <div className="h-16 w-[1px] bg-secondary/50 rounded-full"></div>
       </div>
       <div className="flex-1">

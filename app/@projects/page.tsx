@@ -6,13 +6,13 @@ import Link from "next/link";
 import { easeInOut, motion } from "framer-motion";
 
 import { useSectionInView } from "@/lib/hooks";
-import SectionHeading from "./SectionHeading";
+import SectionHeading from "@/components/section-heading";
 import Image1 from "@/public/corpcomment.png";
 import { FaArrowRight } from "react-icons/fa6";
 import { RiExternalLinkLine } from "react-icons/ri";
-import Section from "./Section";
+import Section from "@/components/section";
 
-export default function Portfolio() {
+export default function ProjectsSection() {
   const { ref } = useSectionInView("Projects");
   const [activeTab, setActiveTab] = useState("All");
 
@@ -81,7 +81,7 @@ const Project = ({ data, activeTab }: any) => {
               transition: {
                 ease: easeInOut,
                 duration: 0.5,
-                delay: 0.2 * i,
+                delay: 0.1 * i,
               },
             }}
             className="space-y-2 relative rounded-xl border border-blue-100 bg-gradient-to-br from-blue-200/50 dark:from-sky-800/50 dark:border-sky-900 p-4 shadow-md shadow-black/10 dark:shadow-white/10">

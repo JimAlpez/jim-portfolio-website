@@ -17,3 +17,22 @@ html {
 .text-stroke-secondary {
   -webkit-text-stroke: 2px #3888c4;
 }
+
+form {
+  @apply space-y-6;
+}
+form > div {
+  @apply space-y-1;
+}
+form label {
+  @apply font-medium text-sm;
+}
+form :is(input, textarea) {
+  @apply bg-transparent rounded border border-primary/30 px-5 py-3 w-full;
+}
+form :is(input, textarea):focus {
+  @apply border-primary;
+}
+form textarea {
+  @apply h-40;
+}

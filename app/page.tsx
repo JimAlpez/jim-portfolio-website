@@ -1,19 +1,19 @@
-import About from "@/components/About";
-import Contact from "@/components/Contact";
-import Experience from "@/components/Experience";
-import Intro from "@/components/Intro";
-import Portfolio from "@/components/Portfolio";
-import Skills from "@/components/Skills";
+import IntroSection from "./@intro/page";
+import AboutSection from "./@about/page";
+import SkillsSection from "./@skills/page";
+import ExperienceSection from "./@experience/page";
+import ProjectsSection from "./@projects/page";
+import ContactSection from "./@contact/page";
 
 export default function Home() {
   return (
     <main>
-      <Intro />
-      <About />
-      <Skills />
-      <Experience />
-      <Portfolio />
-      <Contact />
+      <IntroSection />
+      <AboutSection />
+      <SkillsSection />
+      <ExperienceSection />
+      <ProjectsSection />
+      <ContactSection />
     </main>
   );
 }

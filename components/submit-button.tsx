@@ -9,10 +9,12 @@ export default function SubmitBtn() {
   return (
     <button
       type="submit"
-      className={`group flex items-center justify-center gap-2 h-[3rem] w-fit px-6 bg-gray-900 rounded-full outline-none transition-all hover:bg-gray-950 focus:scale-110 hover:scale-110 active:scale-105 disabled:scale-100 disabled:bg-opacity-65 text-white ${
-        pending && "text-opacity-50"
-      }`}
-      disabled={pending}>
+      disabled={pending}
+      className={`group transition-all bg-primary dark:bg-blue-50 text-blue-50 dark:text-primary font-medium px-6 py-3 rounded flex items-center gap-2 ${
+        pending
+          ? "text-opacity-50 bg-primary/70"
+          : "hover:scale-110 hover:shadow-lg hover:text-blue-50 hover:bg-secondary"
+      }`}>
       Submit
       {pending ? (
         <AiOutlineLoading3Quarters className="text-lg opacity-70 animate-spin" />

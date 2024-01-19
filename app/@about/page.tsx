@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import SectionHeading from "./SectionHeading";
-import Section from "./Section";
+import SectionHeading from "@/components/section-heading";
+import Section from "@/components/section";
 import WFH from "@/public/WFH.jpg";
 import { FiUser } from "react-icons/fi";
 import { FiPhone } from "react-icons/fi";
@@ -12,19 +12,19 @@ import { TfiEmail } from "react-icons/tfi";
 import { FaHeadphones } from "react-icons/fa6";
 import { MdLocalMovies } from "react-icons/md";
 
-export default function About() {
+export default function AboutSection() {
   return (
     <Section sectionView="About" id="about">
-      <div className="grid grid-cols-2 place-items-center gap-10 px-4 py-20">
-        <div className="col-span-1 h-full w-full grid place-items-center">
-          <div className="relative p-6 w-full">
+      <div className="flex items-center flex-col md:flex-row gap-10 px-4 py-20">
+        <div className="flex-1 h-full w-full grid place-items-center">
+          <div className="relative w-[90%] md:w-full h-[22rem]">
             <Image
               src={WFH}
               alt="Jim Alpez"
               width={500}
               height={500}
               quality={95}
-              className="absolute top-0 left-0 w-9/12 shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-[1.15] hover:z-10"
+              className="absolute bottom-0 left-0 w-9/12 shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-[1.15] hover:z-10"
             />
             <Image
               src={WFH}
@@ -32,13 +32,13 @@ export default function About() {
               width={500}
               height={500}
               quality={95}
-              className="absolute bottom-0 right-0 w-9/12 shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-[1.15] hover:z-10"
+              className="absolute top-0 right-0 w-9/12 shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-[1.15] hover:z-10"
             />
-            {/* <div className="absolute top-0 left-0 h-40 w-40 border-t-8 border-l-8 border-secondary"></div>
-            <div className="absolute bottom-0 right-0 h-40 w-40 border-b-8 border-r-8 border-secondary"></div> */}
+            {/* <div className="absolute bottom-0 left-0 h-40 w-40 border-t-8 border-l-8 border-secondary"></div>
+            <div className="absolute top-0 right-0 h-40 w-40 border-b-8 border-r-8 border-secondary"></div> */}
           </div>
         </div>
-        <div className="col-span-1">
+        <div className="flex-1">
           <SectionHeading
             primaryText="About"
             secondaryText="Me"
@@ -73,7 +73,7 @@ export default function About() {
               </div>
               <div className="text-secondary font-medium flex flex-col gap-3">
                 <span>Jim Alpez</span>
-                <span>9760888072</span>
+                <span>+639 760 888 072</span>
                 <span>jim.alpez06@gmail.com</span>
               </div>
             </div>
@@ -92,7 +92,7 @@ export default function About() {
             </div>
             <motion.div
               whileHover={{
-                scale: 1.2,
+                scale: 1.1,
               }}
               whileTap={{
                 scale: 1,

@@ -2,10 +2,9 @@
 
 import { motion } from "framer-motion";
 
-import SectionHeading from "./SectionHeading";
-import Section from "./Section";
-
-export default function Skills() {
+import SectionHeading from "@/components/section-heading";
+import Section from "@/components/section";
+export default function SkillsSection() {
   return (
     <Section sectionView="Skills" id="skills">
       <div className="px-4 py-20">
