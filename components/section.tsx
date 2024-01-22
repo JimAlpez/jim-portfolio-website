@@ -4,13 +4,7 @@ import { useSectionInView } from "@/lib/hooks";
 type sectionProps = {
   children: ReactNode;
   id: string;
-  sectionView:
-    | "About"
-    | "Home"
-    | "Projects"
-    | "Skills"
-    | "Experience"
-    | "Contact";
+  sectionView: "About" | "Home" | "Projects" | "Experience" | "Contact";
 };
 
 export default function Section({ children, id, sectionView }: sectionProps) {

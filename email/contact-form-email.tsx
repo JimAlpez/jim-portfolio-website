@@ -13,11 +13,13 @@ import { Tailwind } from "@react-email/components";
 
 type ContactFormEmailProps = {
   message: string;
+  senderName: string;
   senderEmail: string;
 };
 
 export default function ContactFormEmail({
   message,
+  senderName,
   senderEmail,
 }: ContactFormEmailProps) {
   return (
@@ -29,11 +31,11 @@ export default function ContactFormEmail({
           <Container>
             <Section className="bg-white border border-black/50 my-10 px-10 py-4 rounded-md">
               <Heading className="leading-tight">
-                You received the following message from contact form
+                {senderName} send a message
               </Heading>
               <Text>{message}</Text>
               <Hr />
-              <Text>The sender's email is: {senderEmail}</Text>
+              <Text>Email: {senderEmail}</Text>
             </Section>
           </Container>
         </Body>

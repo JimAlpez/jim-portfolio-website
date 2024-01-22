@@ -31,7 +31,7 @@ export default function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{
-        delay: 2.8,
+        delay: 1.8,
       }}
       className="z-30 fixed top-0 left-0 right-0 shadow-lg bg-blue-50/50 dark:bg-primary/50 shadow-black/[0.03] backdrop-blur-[0.5rem] py-4 px-6">
       <div className="flex flex-col md:flex-row items-center flex-wrap justify-between w-full max-w-5xl mx-auto">

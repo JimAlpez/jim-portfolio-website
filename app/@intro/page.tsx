@@ -35,7 +35,7 @@ export default function IntroSection() {
                 type: "spring",
                 bounce: 0.4,
                 duration: 0.8,
-                delay: 2.8,
+                delay: 1.8,
               },
             }}
             className="flex-1 pt-28 md:pt-0"
@@ -61,7 +61,7 @@ export default function IntroSection() {
                     type: "spring",
                     bounce: 0.4,
                     duration: 0.8,
-                    delay: 2.8,
+                    delay: 1.8,
                   },
                 }}
                 className="text-xl md:text-2xl lg:text-3xl font-semibold flex items-center gap-2">
@@ -77,7 +77,7 @@ export default function IntroSection() {
                     type: "spring",
                     bounce: 0.4,
                     duration: 0.8,
-                    delay: 2.9,
+                    delay: 1.9,
                   },
                 }}
                 className="block text-6xl md:text-7xl lg:text-8xl font-extrabold text-transparent drop-shadow-lg">
@@ -94,7 +94,7 @@ export default function IntroSection() {
                   type: "spring",
                   bounce: 0.4,
                   duration: 0.8,
-                  delay: 2.9,
+                  delay: 1.9,
                 },
               }}
               className="text-xl md:text-2xl lg:text-3xl font-semibold">
@@ -109,7 +109,7 @@ export default function IntroSection() {
                   type: "spring",
                   bounce: 0.4,
                   duration: 0.8,
-                  delay: 2.9,
+                  delay: 1.9,
                 },
               }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -125,7 +125,7 @@ export default function IntroSection() {
                   type: "spring",
                   bounce: 0.4,
                   duration: 1.5,
-                  delay: 3,
+                  delay: 2,
                 },
               }}
               className="dark:border-blue-100 border-primary"
@@ -140,7 +140,7 @@ export default function IntroSection() {
                     type: "spring",
                     bounce: 0.4,
                     duration: 0.8,
-                    delay: 2.9,
+                    delay: 1.9,
                   },
                 }}
                 whileHover={{

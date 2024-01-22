@@ -28,10 +28,10 @@ form label {
   @apply font-medium text-sm;
 }
 form :is(input, textarea) {
-  @apply bg-transparent rounded border border-primary/30 px-5 py-3 w-full;
+  @apply bg-transparent rounded border border-primary/30 dark:border-blue-50/30 px-5 py-3 w-full;
 }
 form :is(input, textarea):focus {
-  @apply border-primary;
+  @apply border-primary dark:border-blue-50;
 }
 form textarea {
   @apply h-40;

@@ -1,41 +1,64 @@
 "use client";
 
+import { Fragment } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+import { INTEREST_DATA } from "@/lib/data";
 import SectionHeading from "@/components/section-heading";
 import Section from "@/components/section";
 import WFH from "@/public/WFH.jpg";
 import { FiUser } from "react-icons/fi";
 import { FiPhone } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
-import { FaHeadphones } from "react-icons/fa6";
-import { MdLocalMovies } from "react-icons/md";
 
 export default function AboutSection() {
   return (
     <Section sectionView="About" id="about">
-      <div className="flex items-center flex-col md:flex-row gap-10 px-4 py-20">
+      <div className="flex items-center flex-col sm:flex-row gap-5 lg:gap-10 px-4 py-20">
         <div className="flex-1 h-full w-full grid place-items-center">
-          <div className="relative w-[90%] md:w-full h-[22rem]">
-            <Image
-              src={WFH}
-              alt="Jim Alpez"
-              width={500}
-              height={500}
-              quality={95}
-              className="absolute bottom-0 left-0 w-9/12 shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-[1.15] hover:z-10"
-            />
-            <Image
-              src={WFH}
-              alt="Jim Alpez"
-              width={500}
-              height={500}
-              quality={95}
-              className="absolute top-0 right-0 w-9/12 shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-[1.15] hover:z-10"
-            />
-            {/* <div className="absolute bottom-0 left-0 h-40 w-40 border-t-8 border-l-8 border-secondary"></div>
-            <div className="absolute top-0 right-0 h-40 w-40 border-b-8 border-r-8 border-secondary"></div> */}
+          <div className="relative w-[90%] md:w-full h-[18rem] md:h-[22rem]">
+            <motion.div
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  duration: 0.5,
+                  delay: 0.2,
+                },
+              }}
+              viewport={{ once: true }}
+              className="absolute bottom-0 left-0 w-9/12 hover:z-10">
+              <Image
+                src={WFH}
+                alt="Jim Alpez"
+                width={500}
+                height={500}
+                quality={95}
+                className="shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-[1.15]"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  duration: 0.5,
+                },
+              }}
+              viewport={{ once: true }}
+              className="absolute top-0 right-0 w-9/12 hover:z-10">
+              <Image
+                src={WFH}
+                alt="Jim Alpez"
+                width={500}
+                height={500}
+                quality={95}
+                className="shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-[1.15]"
+              />
+            </motion.div>
           </div>
         </div>
         <div className="flex-1">
@@ -44,14 +67,33 @@ export default function AboutSection() {
             secondaryText="Me"
             shadowText="Resume"
           />
-          <div className="space-y-12">
-            <p>
+          <div className="space-y-12 overflow-hidden lg:overflow-visible">
+            <motion.p
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{
+                x: 0,
+                opacity: 1,
+                transition: {
+                  duration: 0.4,
+                },
+              }}
+              viewport={{ once: true }}>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia
               magnam, et ex ullam eligendi officiis nemo iure consequuntur dolor
               quod, accusamus quisquam optio odio eveniet. Nisi ab sunt sint
               doloribus!
-            </p>
-            <div className="flex items-center gap-12">
+            </motion.p>
+            <motion.div
+              initial={{ y: -50, opacity: 0 }}
+              whileInView={{
+                y: 0,
+                opacity: 1,
+                transition: {
+                  duration: 0.4,
+                },
+              }}
+              viewport={{ once: true }}
+              className="flex items-center gap-12">
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-3">
                   <FiUser className="text-secondary text-2xl" />{" "}
@@ -76,21 +118,55 @@ export default function AboutSection() {
                 <span>+639 760 888 072</span>
                 <span>jim.alpez06@gmail.com</span>
               </div>
-            </div>
+            </motion.div>
             <div className="space-y-3">
-              <h4 className="text-2xl font-bold">My Interests</h4>
+              <motion.h4
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{
+                  x: 0,
+                  opacity: 1,
+                  transition: {
+                    duration: 0.4,
+                  },
+                }}
+                viewport={{ once: true }}
+                className="text-2xl font-bold">
+                My Interests
+              </motion.h4>
               <div className="flex items-center gap-5">
-                <div className="flex items-center gap-3">
-                  <FaHeadphones className="text-secondary text-3xl" />{" "}
-                  <span className="font-semibold">Music</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <MdLocalMovies className="text-secondary text-3xl" />{" "}
-                  <span className="font-semibold">Movie</span>
-                </div>
+                {INTEREST_DATA.map((interest, i) => (
+                  <Fragment key={interest.title}>
+                    <motion.div
+                      initial={{ x: 30, opacity: 0 }}
+                      whileInView={{
+                        x: 0,
+                        opacity: 1,
+                        transition: {
+                          duration: 0.4,
+                          delay: 0.2 * i,
+                        },
+                      }}
+                      viewport={{ once: true }}
+                      className="flex items-center gap-3">
+                      <div className="text-secondary text-3xl">
+                        {interest.icon}
+                      </div>
+                      <p className="font-semibold">{interest.title}</p>
+                    </motion.div>
+                  </Fragment>
+                ))}
               </div>
             </div>
             <motion.div
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{
+                y: 0,
+                opacity: 1,
+                transition: {
+                  duration: 0.4,
+                },
+              }}
+              viewport={{ once: true }}
               whileHover={{
                 scale: 1.1,
               }}

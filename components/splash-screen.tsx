@@ -25,7 +25,7 @@ export default function SplashScreen({ finishLoading }: SplashScreenProps) {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       finishLoading();
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(timeoutId);
   }, [finishLoading]);
@@ -34,12 +34,12 @@ export default function SplashScreen({ finishLoading }: SplashScreenProps) {
     <motion.div
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
-      transition={{ ease: easeOut, duration: 1, delay: 2 }}
+      transition={{ ease: easeOut, duration: 1, delay: 1 }}
       className="z-50 bg-primary fixed top-0 left-0 right-0 bottom-0 grid place-items-center">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ ease: easeInOut, delay: 0.2 }}>
+        transition={{ ease: easeInOut, delay: 0.1 }}>
         <h2 className="text-transparent text-stroke-secondary text-9xl font-extrabold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center h-48 w-48 border-4 border-secondary/20 rounded-full">
           J
         </h2>
