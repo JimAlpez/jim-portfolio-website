@@ -115,7 +115,7 @@ export default function IntroSection() {
               Passionate about React.js and Next.js magic! I specialize in
               crafting sleek, dynamic interfaces, turning ideas into
               pixel-perfect reality. Thriving on seamless web app development,
-              let's exceed expectations together!
+              let&apos;s exceed expectations together!
             </motion.p>
             <motion.hr
               initial={{ scale: 0, opacity: 0 }}
