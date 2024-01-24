@@ -5,14 +5,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { GrReactjs } from "react-icons/gr";
-import { TbBrandNextjs } from "react-icons/tb";
-import { TbBrandTypescript } from "react-icons/tb";
-import { BiLogoTailwindCss } from "react-icons/bi";
-import { RiBootstrapLine } from "react-icons/ri";
-import { SiWordpress } from "react-icons/si";
-import { SiMongodb } from "react-icons/si";
-import { IoLogoSass } from "react-icons/io";
+import { SKILLS_DATA } from "@/lib/data";
 
 export default function SkillsSection() {
   const settings = {
@@ -28,6 +21,20 @@ export default function SkillsSection() {
     cssEase: "linear",
     slidesToShow: 6,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+    ],
   };
 
   return (
@@ -44,7 +51,7 @@ export default function SkillsSection() {
         viewport={{ once: true }}
         className="m-1 p-6 rounded-xl shadow-lg shadow-blue-100/30 dark:shadow-sky-900/30 border-t-2 border-blue-100/30 dark:border-sky-900/30">
         <Slider {...settings}>
-          {skills.map((skill) => (
+          {SKILLS_DATA.map((skill) => (
             <div key={skill.title}>
               <div className="text-center space-y-2">
                 <div className="grid place-items-center text-5xl">
@@ -61,42 +68,3 @@ export default function SkillsSection() {
     </div>
   );
 }
-
-const skills = [
-  {
-    title: "ReactJS",
-    icon: <GrReactjs />,
-  },
-  {
-    title: "NextJS",
-    icon: <TbBrandNextjs />,
-  },
-  {
-    title: "Typescript",
-    icon: <TbBrandTypescript />,
-  },
-  {
-    title: "Tailwind",
-    icon: <BiLogoTailwindCss />,
-  },
-  {
-    title: "Bootstrap",
-    icon: <RiBootstrapLine />,
-  },
-  {
-    title: "Wordpress",
-    icon: <SiWordpress />,
-  },
-  {
-    title: "MongoDB",
-    icon: <SiMongodb />,
-  },
-  {
-    title: "Sass",
-    icon: <IoLogoSass />,
-  },
-  {
-    title: "Wordpress",
-    icon: <SiWordpress />,
-  },
-];

@@ -1,12 +1,19 @@
 import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
-import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+
+// Skills
+import { GrReactjs } from "react-icons/gr";
+import { TbBrandNextjs } from "react-icons/tb";
+import { TbBrandTypescript } from "react-icons/tb";
+import { BiLogoTailwindCss } from "react-icons/bi";
+import { RiBootstrapLine } from "react-icons/ri";
+import { SiWordpress } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
+import { IoLogoSass } from "react-icons/io";
+import { TbBrandFramerMotion } from "react-icons/tb";
+
 import Image1 from "@/public/corpcomment.png";
 
+// Interest
 import { MdLocalMovies } from "react-icons/md";
 import { CgGames } from "react-icons/cg";
 import { BiMusic } from "react-icons/bi";
@@ -31,6 +38,45 @@ export const links = [
   {
     name: "Contact",
     hash: "/#contact",
+  },
+] as const;
+
+export const SKILLS_DATA = [
+  {
+    title: "ReactJS",
+    icon: React.createElement(GrReactjs),
+  },
+  {
+    title: "NextJS",
+    icon: React.createElement(TbBrandNextjs),
+  },
+  {
+    title: "Typescript",
+    icon: React.createElement(TbBrandTypescript),
+  },
+  {
+    title: "Tailwind",
+    icon: React.createElement(BiLogoTailwindCss),
+  },
+  {
+    title: "Bootstrap",
+    icon: React.createElement(RiBootstrapLine),
+  },
+  {
+    title: "Wordpress",
+    icon: React.createElement(SiWordpress),
+  },
+  {
+    title: "MongoDB",
+    icon: React.createElement(SiMongodb),
+  },
+  {
+    title: "Sass",
+    icon: React.createElement(IoLogoSass),
+  },
+  {
+    title: "Framer Motion",
+    icon: React.createElement(TbBrandFramerMotion),
   },
 ] as const;
 

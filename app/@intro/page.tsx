@@ -112,9 +112,10 @@ export default function IntroSection() {
                   delay: 1.9,
                 },
               }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              voluptatum, quo quae possimus neque amet repellendus eos qui
-              accusamus
+              Passionate about React.js and Next.js magic! I specialize in
+              crafting sleek, dynamic interfaces, turning ideas into
+              pixel-perfect reality. Thriving on seamless web app development,
+              let's exceed expectations together!
             </motion.p>
             <motion.hr
               initial={{ scale: 0, opacity: 0 }}
