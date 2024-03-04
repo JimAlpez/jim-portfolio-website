@@ -16,9 +16,9 @@ import { AiOutlineDownload } from "react-icons/ai";
 export default function AboutSection() {
   return (
     <Section sectionView="About" id="about">
-      <div className="flex items-center flex-col md:flex-row gap-5 lg:gap-10 px-4 py-20">
+      <div className="flex items-center flex-col md:flex-row gap-10 px-4 py-20">
         <div className="flex-1 h-full w-full grid place-items-center">
-          <div className="h-[20rem] w-full">
+          <div className="h-[20rem] w-full px-5">
             <ImageSlideshow />
           </div>
         </div>

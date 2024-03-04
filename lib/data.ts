@@ -126,6 +126,51 @@ export const PROJECTS_DATA = [
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat non porro error dignissimos accusantium facilis qui nemo veritatis. Reiciendis, fuga libero officia magnam itaque inventore nisi maiores at saepe doloribus.",
     tabs: ["All", "Wordpress"],
   },
+  {
+    id: 3,
+    title: "Title Here",
+    link: "#",
+    image: Portfolio,
+    content:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat non porro error dignissimos accusantium facilis qui nemo veritatis. Reiciendis, fuga libero officia magnam itaque inventore nisi maiores at saepe doloribus.",
+    tabs: ["All", "Wordpress"],
+  },
+  {
+    id: 4,
+    title: "Title Here",
+    link: "#",
+    image: Portfolio,
+    content:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat non porro error dignissimos accusantium facilis qui nemo veritatis. Reiciendis, fuga libero officia magnam itaque inventore nisi maiores at saepe doloribus.",
+    tabs: ["All", "Wordpress"],
+  },
+  {
+    id: 5,
+    title: "Title Here",
+    link: "#",
+    image: Portfolio,
+    content:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat non porro error dignissimos accusantium facilis qui nemo veritatis. Reiciendis, fuga libero officia magnam itaque inventore nisi maiores at saepe doloribus.",
+    tabs: ["All", "Wordpress"],
+  },
+  {
+    id: 6,
+    title: "Title Here",
+    link: "#",
+    image: Portfolio,
+    content:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat non porro error dignissimos accusantium facilis qui nemo veritatis. Reiciendis, fuga libero officia magnam itaque inventore nisi maiores at saepe doloribus.",
+    tabs: ["All", "Wordpress"],
+  },
+  {
+    id: 7,
+    title: "Title Here",
+    link: "#",
+    image: Portfolio,
+    content:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat non porro error dignissimos accusantium facilis qui nemo veritatis. Reiciendis, fuga libero officia magnam itaque inventore nisi maiores at saepe doloribus.",
+    tabs: ["All", "Wordpress"],
+  },
 ] as const;
 
 export const INTEREST_DATA = [

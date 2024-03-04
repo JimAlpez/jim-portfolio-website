@@ -48,7 +48,7 @@ export default function IntroSection() {
               height={500}
               quality={95}
               priority={true}
-              className="w-[366px] h-[500px] object-cover mx-auto rounded-[183px] border-l-2 border-t-2 border-secondary/20 shadow-lg bg-primary/[0.05]"
+              className="w-[320px] h-[430px] lg:w-[366px] lg:h-[500px] object-cover mx-auto rounded-[183px] border-l-2 border-t-2 border-secondary/20 shadow-lg bg-primary/[0.05]"
             />
           </motion.div>
           <div className="flex-1 space-y-6 p-6 md:-0">

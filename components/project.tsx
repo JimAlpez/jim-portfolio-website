@@ -9,6 +9,10 @@ export default function Project({ data, activeTab }: any) {
 
   return (
     <>
+      {filteredData.length === 0 && (
+        <p className="text-center font-medium text-rose-500">No website yet.</p>
+      )}
+
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredData.slice(0, 6).map((item: any, i: any) => (
           <motion.div
@@ -18,7 +22,7 @@ export default function Project({ data, activeTab }: any) {
               opacity: 1,
               transition: {
                 ease: easeInOut,
-                duration: 0.5,
+                duration: 0.4,
                 delay: 0.1 * i,
               },
             }}
@@ -57,13 +61,15 @@ export default function Project({ data, activeTab }: any) {
         ))}
       </div>
 
-      <div className="py-3 text-center">
-        <Link
-          href="projects"
-          className="text-sm underline italic font-medium hover:text-secondary">
-          See more projects...
-        </Link>
-      </div>
+      {filteredData.length > 6 && (
+        <div className="py-3 text-center">
+          <Link
+            href="projects"
+            className="text-sm italic font-medium hover:underline hover:text-secondary">
+            See more projects...
+          </Link>
+        </div>
+      )}
     </>
   );
 }
