@@ -22,8 +22,8 @@ export default function Project({ data, activeTab }: any) {
                 delay: 0.1 * i,
               },
             }}
-            className="shadow-md shadow-black/10 dark:shadow-white/10 relative overflow-hidden rounded-lg border border-blue-100 bg-gradient-to-br from-blue-200/50 dark:from-sky-800/50 dark:border-sky-900">
-            <div className="h-60 w-full overflow-hidden shadow-md shadow-sky-900/10">
+            className="shadow-md shadow-black/10 dark:shadow-white/10 relative overflow-hidden rounded-xl border border-blue-100 bg-gradient-to-br from-blue-200/50 dark:from-sky-800/50 dark:border-sky-900">
+            <div className="h-52 w-full overflow-hidden shadow-md shadow-sky-900/20">
               <a href={item.link} target="_blank">
                 <Image
                   src={item.image}
@@ -36,20 +36,19 @@ export default function Project({ data, activeTab }: any) {
               </a>
             </div>
 
-            <div className="space-y-6 p-4">
+            <div className="space-y-3 p-4">
               <p className="text-xs italic text-secondary font-medium">
                 {item.tabs.includes("All")
                   ? item.tabs.filter((tag: any) => tag !== "All").join(", ")
                   : item.tabs.join(", ")}
               </p>
-
               <div className="space-y-2">
                 <a
                   href={item.link}
-                  className="text-lg font-bold hover:underline line-clamp-1">
+                  className="text-lg font-bold hover:underline hover:text-secondary line-clamp-1 w-fit">
                   {item.title}
                 </a>
-                <p className="text-sm line-clamp-2 text-primary/50 dark:text-blue-50/50">
+                <p className="text-sm line-clamp-2 text-primary/60 dark:text-blue-50/60">
                   {item.content}
                 </p>
               </div>

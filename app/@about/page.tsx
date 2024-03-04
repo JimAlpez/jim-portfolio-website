@@ -5,60 +5,21 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { INTEREST_DATA } from "@/lib/data";
+import ImageSlideshow from "@/components/image-slideshow";
 import SectionHeading from "@/components/section-heading";
 import Section from "@/components/section";
-import WFH from "@/public/WFH.jpg";
 import { FiUser } from "react-icons/fi";
 import { FiPhone } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
+import { AiOutlineDownload } from "react-icons/ai";
 
 export default function AboutSection() {
   return (
     <Section sectionView="About" id="about">
-      <div className="flex items-center flex-col sm:flex-row gap-5 lg:gap-10 px-4 py-20">
+      <div className="flex items-center flex-col md:flex-row gap-5 lg:gap-10 px-4 py-20">
         <div className="flex-1 h-full w-full grid place-items-center">
-          <div className="relative w-[90%] md:w-full h-[18rem] md:h-[22rem]">
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              whileInView={{
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  duration: 0.5,
-                  delay: 0.2,
-                },
-              }}
-              viewport={{ once: true }}
-              className="absolute bottom-0 left-0 w-9/12 hover:z-10">
-              <Image
-                src={WFH}
-                alt="Jim Alpez"
-                width={500}
-                height={500}
-                quality={95}
-                className="shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-[1.15]"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              whileInView={{
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  duration: 0.5,
-                },
-              }}
-              viewport={{ once: true }}
-              className="absolute top-0 right-0 w-9/12 hover:z-10">
-              <Image
-                src={WFH}
-                alt="Jim Alpez"
-                width={500}
-                height={500}
-                quality={95}
-                className="shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-[1.15]"
-              />
-            </motion.div>
+          <div className="h-[20rem] w-full">
+            <ImageSlideshow />
           </div>
         </div>
         <div className="flex-1">
@@ -179,6 +140,7 @@ export default function AboutSection() {
                 download
                 className="hover:shadow-lg bg-primary hover:bg-secondary dark:bg-blue-50 text-blue-50 hover:text-blue-50 dark:text-primary font-medium px-6 py-3 rounded flex items-center gap-2">
                 Download CV
+                <AiOutlineDownload className="text-2xl animate-bounce" />
               </a>
             </motion.div>
           </div>

@@ -19,7 +19,7 @@ export default function ContactSection() {
 
   return (
     <Section sectionView="Contact" id="contact">
-      <div className="overflow-hidden mb-12 mx-4 px-6 lg:px-12 py-10 lg:py-20 rounded-xl shadow-lg shadow-sky-900/20 dark:shadow-blue-100/20 border-t-2 border-sky-900/20 dark:border-b-yellow-100/20">
+      <div className="overflow-hidden mb-12 mx-4 pb-10 lg:px-12 py-10 lg:py-20 rounded-xl shadow-lg shadow-sky-900/20 dark:shadow-blue-100/20 border-t-2 border-sky-900/20 dark:border-b-yellow-100/20">
         <SectionHeading
           primaryText="Get in"
           secondaryText="Touch"
@@ -103,10 +103,14 @@ export default function ContactSection() {
               <GrMapLocation className="text-2xl text-secondary" />
               <div>
                 <p className="text-sm text-secondary font-medium">Address:</p>
-                <p className="font-bold">
+                <a
+                  href="https://maps.app.goo.gl/om1Q9DQLXNwiHZdN6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold">
                   Rawis, Calbayog City,
                   <br /> Western Samar, Philippines
-                </p>
+                </a>
               </div>
             </motion.div>
           </div>

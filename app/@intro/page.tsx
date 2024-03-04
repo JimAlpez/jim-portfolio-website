@@ -3,11 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Typewriter from "typewriter-effect";
 
 import JimAlpez from "@/public/jim-alpez.png";
 import Background from "@/public/background-intro.jpg";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import { BiSolidMessageRoundedDots } from "react-icons/bi";
+import { AiOutlineMessage } from "react-icons/ai";
 import { RiBlazeLine } from "react-icons/ri";
 import Section from "@/components/section";
 
@@ -25,7 +26,7 @@ export default function IntroSection() {
 
         <div className="-z-10 absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-br from-blue-50/70 via-blue-100/70 to-blue-200/70 dark:from-sky-800/70 dark:via-sky-900/70 dark:to-sky-950/70"></div>
 
-        <div className="min-h-screen flex flex-col lg:flex-row-reverse items-center justify-between w-full max-w-5xl mx-auto">
+        <div className="min-h-screen flex flex-col md:flex-row-reverse items-center justify-between w-full max-w-5xl mx-auto">
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{
@@ -47,7 +48,7 @@ export default function IntroSection() {
               height={500}
               quality={95}
               priority={true}
-              className="w-9/12 mx-auto rounded-full shadow-lg bg-blue-500/[0.03]"
+              className="w-[366px] h-[500px] object-cover mx-auto rounded-[183px] border-l-2 border-t-2 border-secondary/20 shadow-lg bg-primary/[0.05]"
             />
           </motion.div>
           <div className="flex-1 space-y-6 p-6 md:-0">
@@ -97,8 +98,18 @@ export default function IntroSection() {
                   delay: 1.9,
                 },
               }}
-              className="text-xl md:text-2xl lg:text-3xl font-semibold">
-              Frontend <span className="text-secondary">Web Developer</span>
+              className="text-xl md:text-2xl lg:text-3xl font-semibold text-secondary">
+              {/* <Typewriter
+                options={{
+                  strings: ["Wordpress Developer", "React (Next.js)"],
+                  autoStart: true,
+                  loop: true,
+                }}
+              /> */}
+              Frontend{" "}
+              <span className="text-primary dark:text-blue-50">
+                Web developer
+              </span>
             </motion.h3>
             <motion.p
               initial={{ y: 50, opacity: 0 }}
@@ -159,7 +170,7 @@ export default function IntroSection() {
                     setActiveSection("Contact");
                     setTimeOfLastClick(Date.now());
                   }}>
-                  <BiSolidMessageRoundedDots className="text-2xl animate-bounce group-hover:animate-none" />{" "}
+                  <AiOutlineMessage className="text-2xl animate-bounce group-hover:animate-none" />{" "}
                   Get in touch
                 </Link>
               </motion.div>

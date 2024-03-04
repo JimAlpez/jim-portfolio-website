@@ -40,10 +40,10 @@ export default function SplashScreen({ finishLoading }: SplashScreenProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ ease: easeInOut, delay: 0.1 }}>
-        <h2 className="text-transparent text-stroke-secondary text-9xl font-extrabold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center h-48 w-48 border-4 border-secondary/20 rounded-full">
+        <h2 className="text-transparent text-stroke-secondary text-9xl font-extrabold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center">
           J
         </h2>
-        <div className="h-48 w-48 border-b-4 border-secondary animate-spin rounded-full"></div>
+        <div className="h-52 w-52 border-8 border-b-secondary/20 border-secondary animate-spin rounded-full"></div>
       </motion.div>
     </motion.div>
   );

@@ -11,12 +11,13 @@ import { SiMongodb } from "react-icons/si";
 import { IoLogoSass } from "react-icons/io";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
-import Image1 from "@/public/corpcomment.png";
-
 // Interest
 import { MdLocalMovies } from "react-icons/md";
 import { CgGames } from "react-icons/cg";
 import { BiMusic } from "react-icons/bi";
+
+// Projects
+import Portfolio from "@/public/Projects/Portfolio.png";
 
 export const links = [
   {
@@ -109,60 +110,20 @@ export const EXPERIENCE_DATA = [
 export const PROJECTS_DATA = [
   {
     id: 1,
-    title: "ToDo List",
-    image: Image1,
+    title: "Title Here",
     link: "#",
+    image: Portfolio,
     content:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat non porro error dignissimos accusantium facilis qui nemo veritatis. Reiciendis, fuga libero officia magnam itaque inventore nisi maiores at saepe doloribus.",
-    tabs: ["All", "Mobile"],
-  },
-  {
-    id: 3,
-    title: "E-Commerce",
-    image: Image1,
-    content: "3rd Item",
     tabs: ["All", "Wordpress"],
   },
   {
-    id: 4,
-    title: "E-Commerce",
-    image: Image1,
-    content: "4th Item",
-    tabs: ["All", "React"],
-  },
-  {
-    id: 5,
-    title: "E-Commerce",
-    image: Image1,
-    content: "5th Item",
-    tabs: ["All", "Wordpress"],
-  },
-  {
-    id: 6,
-    title: "E-Commerce",
-    image: Image1,
-    content: "5th Item",
-    tabs: ["All", "Wordpress"],
-  },
-  {
-    id: 7,
-    title: "E-Commerce",
-    image: Image1,
-    content: "5th Item",
-    tabs: ["All", "Wordpress"],
-  },
-  {
-    id: 8,
-    title: "E-Commerce",
-    image: Image1,
-    content: "5th Item",
-    tabs: ["All", "Wordpress"],
-  },
-  {
-    id: 9,
-    title: "E-Commerce",
-    image: Image1,
-    content: "5th Item",
+    id: 2,
+    title: "Title Here",
+    link: "#",
+    image: Portfolio,
+    content:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat non porro error dignissimos accusantium facilis qui nemo veritatis. Reiciendis, fuga libero officia magnam itaque inventore nisi maiores at saepe doloribus.",
     tabs: ["All", "Wordpress"],
   },
 ] as const;

@@ -8,7 +8,7 @@ import { FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-sky-900 dark:bg-sky-100 text-center text-blue-50/90 dark:text-primary/90">
+    <footer className="text-center bg-blue-100 dark:bg-sky-900">
       <div className="w-full max-w-lg mx-auto px-4 py-10 space-y-12">
         <Link href="/" className="text-4xl font-bold">
           jim<span className="text-secondary">.dev</span>
