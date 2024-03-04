@@ -106,10 +106,8 @@ export default function IntroSection() {
                   loop: true,
                 }}
               /> */}
-              Frontend{" "}
-              <span className="text-primary dark:text-blue-50">
-                Web developer
-              </span>
+              <span className="text-primary dark:text-blue-50">Frontend</span>{" "}
+              Web developer
             </motion.h3>
             <motion.p
               initial={{ y: 50, opacity: 0 }}

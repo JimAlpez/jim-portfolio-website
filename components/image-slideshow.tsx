@@ -5,11 +5,10 @@ import Image from "next/image";
 
 // Slideshow
 import Image1 from "@/public/Slideshow/WFH.jpg";
-import Image2 from "@/public/jim-alpez.png";
 
 const images = [
   {
-    image: Image2,
+    image: Image1,
     alt: "Image 2",
   },
   {
@@ -32,7 +31,7 @@ export default function ImageSlideshow() {
   }, []);
 
   return (
-    <div className="relative w-full h-full rounded-xl overflow-hidden shadow-xl border-2 border-secondary/30">
+    <div className="relative w-full h-full rounded-xl overflow-hidden shadow-xl border border-sky-950 dark:border-blue-50">
       {images.map((image, index) => (
         <Image
           key={index}
