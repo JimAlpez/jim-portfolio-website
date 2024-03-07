@@ -4,16 +4,22 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 // Slideshow
-import Image1 from "@/public/Slideshow/WFH.jpg";
+import Image1 from "@/public/Slideshow/Image1.jpg";
+import Image2 from "@/public/Slideshow/Image2.jpg";
+import Image3 from "@/public/Slideshow/Image3.jpg";
 
 const images = [
   {
     image: Image1,
-    alt: "Image 2",
+    alt: "Jim Alpez Observing",
   },
   {
-    image: Image1,
-    alt: "Image 1",
+    image: Image2,
+    alt: "Reading the Books",
+  },
+  {
+    image: Image3,
+    alt: "BsCpE Boys",
   },
 ];
 

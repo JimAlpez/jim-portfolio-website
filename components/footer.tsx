@@ -4,7 +4,8 @@ import Link from "next/link";
 import { easeInOut, motion } from "framer-motion";
 
 import { FaFacebookF } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -24,7 +25,7 @@ export default function Footer() {
               transition={{
                 ease: easeInOut,
               }}
-              href="#"
+              href="https://www.facebook.com/JimAlpez/"
               target="_blank"
               className="hover:text-primary dark:hover:text-blue-50 h-12 w-12 grid place-items-center rounded-full">
               <FaFacebookF />
@@ -37,10 +38,23 @@ export default function Footer() {
               transition={{
                 ease: easeInOut,
               }}
-              href="#"
+              href="https://ph.linkedin.com/in/jim-alpez"
               target="_blank"
               className="hover:text-primary dark:hover:text-blue-50 h-12 w-12 grid place-items-center rounded-full">
-              <FaInstagram />
+              <FaLinkedinIn />
+            </motion.a>
+            <motion.a
+              whileHover={{
+                scale: 1.2,
+                boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+              }}
+              transition={{
+                ease: easeInOut,
+              }}
+              href="https://github.com/JimAlpez"
+              target="_blank"
+              className="hover:text-primary dark:hover:text-blue-50 h-12 w-12 grid place-items-center rounded-full">
+              <FaGithub />
             </motion.a>
           </div>
 

@@ -12,9 +12,10 @@ import { IoLogoSass } from "react-icons/io";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
 // Interest
-import { MdLocalMovies } from "react-icons/md";
 import { CgGames } from "react-icons/cg";
-import { BiMusic } from "react-icons/bi";
+import { FaLaptopCode } from "react-icons/fa6";
+import { IoExtensionPuzzleOutline } from "react-icons/io5";
+import { MdElectricBolt } from "react-icons/md";
 
 // Projects
 import Portfolio from "@/public/Projects/Portfolio.png";
@@ -87,23 +88,37 @@ export const EDUCATION_DATA = [
     subTitle: "Northwest Samar State University",
     date: "2019 - 2023",
   },
-  {
-    title: "General Academic Strand",
-    subTitle: "Pagsanghan Senior High School",
-    date: "2017 - 2019",
-  },
 ] as const;
 
 export const EXPERIENCE_DATA = [
   {
-    title: "BS Computer Engineering Experience",
-    subTitle: "College",
-    date: "2020 - 2023",
+    title: "Frontend Website Developer",
+    subTitle: "Full Time",
+    date: "2023 - Now",
   },
   {
-    title: "BS Computer Engineering 2",
-    subTitle: "Northwest Samar State University 2",
-    date: "2020 - 2023",
+    title: "Frontend Website Developer",
+    subTitle: "Part Time",
+    date: "2021 - 2023",
+  },
+] as const;
+
+export const INTEREST_DATA = [
+  {
+    title: "Coding",
+    icon: React.createElement(FaLaptopCode),
+  },
+  {
+    title: "Electrical",
+    icon: React.createElement(MdElectricBolt),
+  },
+  {
+    title: "Puzzle",
+    icon: React.createElement(IoExtensionPuzzleOutline),
+  },
+  {
+    title: "Games",
+    icon: React.createElement(CgGames),
   },
 ] as const;
 
@@ -170,20 +185,5 @@ export const PROJECTS_DATA = [
     content:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat non porro error dignissimos accusantium facilis qui nemo veritatis. Reiciendis, fuga libero officia magnam itaque inventore nisi maiores at saepe doloribus.",
     tabs: ["All", "Wordpress"],
-  },
-] as const;
-
-export const INTEREST_DATA = [
-  {
-    title: "Games",
-    icon: React.createElement(CgGames),
-  },
-  {
-    title: "Movies",
-    icon: React.createElement(MdLocalMovies),
-  },
-  {
-    title: "Music",
-    icon: React.createElement(BiMusic),
   },
 ] as const;
