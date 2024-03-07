@@ -15,7 +15,7 @@ export default function Project({ data, activeTab }: any) {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredData.slice(0, 6).map((item: any, i: any) => (
-          <motion.div
+          <motion.a
             key={item.id}
             initial={{ opacity: 0 }}
             whileInView={{
@@ -26,38 +26,27 @@ export default function Project({ data, activeTab }: any) {
                 delay: 0.1 * i,
               },
             }}
-            className="shadow-md shadow-black/10 dark:shadow-white/10 relative overflow-hidden rounded-xl border border-blue-100 bg-gradient-to-br from-blue-200/50 dark:from-sky-800/50 dark:border-sky-900">
-            <div className="h-52 w-full overflow-hidden shadow-md shadow-sky-900/20">
-              <a href={item.link} target="_blank">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={300}
-                  height={300}
-                  quality={95}
-                  className="w-full h-full object-cover transition-all duration-500 hover:scale-125"
-                />
-              </a>
+            href={item.link}
+            target="_blank"
+            className="group shadow-md shadow-black/10 dark:shadow-white/10 relative overflow-hidden rounded-xl border border-blue-100 bg-gradient-to-br from-blue-200/50 dark:from-sky-800/50 dark:border-sky-900">
+            <div className="h-60 w-full overflow-hidden shadow-md shadow-sky-900/20">
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={300}
+                height={300}
+                quality={95}
+                className="w-full h-full object-cover transition-all duration-500 md:group-hover:scale-125"
+              />
             </div>
 
-            <div className="space-y-3 p-4">
-              <p className="text-xs italic text-secondary font-medium">
-                {item.tabs.includes("All")
-                  ? item.tabs.filter((tag: any) => tag !== "All").join(", ")
-                  : item.tabs.join(", ")}
+            <div className="space-y-2 py-3 px-4 bg-blue-50 dark:bg-sky-950 absolute bottom-0 md:bottom-[-42px] md:group-hover:bottom-0 transition-all duration-500 ease left-0 w-full">
+              <h3 className="font-bold line-clamp-1">{item.title}</h3>
+              <p className="text-xs line-clamp-2 text-primary/60 dark:text-blue-50/60">
+                {item.content}
               </p>
-              <div className="space-y-2">
-                <a
-                  href={item.link}
-                  className="text-lg font-bold hover:underline hover:text-secondary line-clamp-1 w-fit">
-                  {item.title}
-                </a>
-                <p className="text-sm line-clamp-2 text-primary/60 dark:text-blue-50/60">
-                  {item.content}
-                </p>
-              </div>
             </div>
-          </motion.div>
+          </motion.a>
         ))}
       </div>
 

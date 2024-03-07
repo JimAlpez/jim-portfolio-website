@@ -19,7 +19,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${inter.className} relative bg-blue-50 dark:bg-sky-950 text-primary dark:text-blue-50 tracking-wider`}>
+        className={`${inter.className} relative bg-blue-50 dark:bg-sky-950 text-primary dark:text-blue-50 tracking-wide`}>
         <Wrapper>{children}</Wrapper>
         <SpeedInsights />
       </body>

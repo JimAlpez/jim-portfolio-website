@@ -22,7 +22,7 @@ export default function ProjectTab({ activeTab, setActiveTab }: any) {
         viewport={{ once: true }}>
         <button
           onClick={() => handleTabClick("All")}
-          className={`uppercase tracking-wider hover:text-secondary/70 ${
+          className={`uppercase tracking-wide hover:text-secondary/70 ${
             activeTab === "All" ? "text-secondary" : ""
           }`}>
           All
@@ -42,7 +42,7 @@ export default function ProjectTab({ activeTab, setActiveTab }: any) {
         viewport={{ once: true }}>
         <button
           onClick={() => handleTabClick("React")}
-          className={`uppercase tracking-wider hover:text-secondary/70 ${
+          className={`uppercase tracking-wide hover:text-secondary/70 ${
             activeTab === "React" ? "text-secondary" : ""
           }`}>
           React
@@ -62,7 +62,7 @@ export default function ProjectTab({ activeTab, setActiveTab }: any) {
         viewport={{ once: true }}>
         <button
           onClick={() => handleTabClick("Wordpress")}
-          className={`uppercase tracking-wider hover:text-secondary/70 ${
+          className={`uppercase tracking-wide hover:text-secondary/70 ${
             activeTab === "Wordpress" ? "text-secondary" : ""
           }`}>
           Wordpress
