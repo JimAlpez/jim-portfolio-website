@@ -93,7 +93,7 @@ export default function AboutSection() {
                 className="text-2xl font-bold">
                 My Interests
               </motion.h4>
-              <div className="flex items-center gap-5">
+              <div className="flex items-center flex-wrap gap-5">
                 {INTEREST_DATA.map((interest, i) => (
                   <Fragment key={interest.title}>
                     <motion.div
