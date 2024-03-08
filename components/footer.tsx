@@ -6,10 +6,18 @@ import { easeInOut, motion } from "framer-motion";
 import { FaFacebookF } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { useTheme } from "@/context/theme-context";
 
 export default function Footer() {
+  const { theme } = useTheme();
+
   return (
-    <footer className="text-center pt-10">
+    <footer
+      className={`text-center pt-10 ${
+        theme === "light"
+          ? "text-primary bg-blue-50"
+          : "text-blue-50 bg-primary"
+      }`}>
       <div className="w-full max-w-lg mx-auto px-4 py-10 space-y-12">
         <Link href="/" className="text-4xl font-bold">
           jim<span className="text-secondary">.dev</span>
@@ -27,7 +35,9 @@ export default function Footer() {
               }}
               href="https://www.facebook.com/JimAlpez/"
               target="_blank"
-              className="hover:text-primary dark:hover:text-blue-50 h-12 w-12 grid place-items-center rounded-full">
+              className={`h-12 w-12 grid place-items-center rounded-full ${
+                theme === "light" ? "hover:text-primary" : "hover:text-blue-50"
+              }`}>
               <FaFacebookF />
             </motion.a>
             <motion.a
@@ -40,7 +50,9 @@ export default function Footer() {
               }}
               href="https://ph.linkedin.com/in/jim-alpez"
               target="_blank"
-              className="hover:text-primary dark:hover:text-blue-50 h-12 w-12 grid place-items-center rounded-full">
+              className={`h-12 w-12 grid place-items-center rounded-full ${
+                theme === "light" ? "hover:text-primary" : "hover:text-blue-50"
+              }`}>
               <FaLinkedinIn />
             </motion.a>
             <motion.a
@@ -53,7 +65,9 @@ export default function Footer() {
               }}
               href="https://github.com/JimAlpez"
               target="_blank"
-              className="hover:text-primary dark:hover:text-blue-50 h-12 w-12 grid place-items-center rounded-full">
+              className={`h-12 w-12 grid place-items-center rounded-full ${
+                theme === "light" ? "hover:text-primary" : "hover:text-blue-50"
+              }`}>
               <FaGithub />
             </motion.a>
           </div>

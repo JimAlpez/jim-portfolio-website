@@ -3,11 +3,15 @@
 import { motion } from "framer-motion";
 import Slider from "react-slick";
 
+import { SKILLS_DATA } from "@/lib/data";
+import { useTheme } from "@/context/theme-context";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { SKILLS_DATA } from "@/lib/data";
 
 export default function SkillsSection() {
+  const { theme } = useTheme();
+
   const settings = {
     dots: false,
     arrows: false,
@@ -49,7 +53,11 @@ export default function SkillsSection() {
           },
         }}
         viewport={{ once: true }}
-        className="m-1 p-6 rounded-xl shadow-lg shadow-blue-100/30 dark:shadow-sky-900/30 border-t-2 border-blue-100/30 dark:border-sky-900/30">
+        className={`m-1 p-6 rounded-xl shadow-lg border-t-2 ${
+          theme === "light"
+            ? "shadow-blue-100/50 border-blue-100/30"
+            : "shadow-sky-900/30 border-sky-900/30"
+        }`}>
         <Slider {...settings}>
           {SKILLS_DATA.map((skill) => (
             <div key={skill.title}>

@@ -11,8 +11,11 @@ import { FiUser } from "react-icons/fi";
 import { FiPhone } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
 import { AiOutlineDownload } from "react-icons/ai";
+import { useTheme } from "@/context/theme-context";
 
 export default function AboutSection() {
+  const { theme } = useTheme();
+
   return (
     <Section sectionView="About" id="about">
       <div className="flex items-center flex-col md:flex-row gap-10 px-4 py-20">
@@ -137,7 +140,11 @@ export default function AboutSection() {
               <a
                 href="CV.pdf"
                 download
-                className="hover:shadow-lg bg-primary hover:bg-secondary dark:bg-blue-50 text-blue-50 hover:text-blue-50 dark:text-primary font-medium px-6 py-3 rounded flex items-center gap-2">
+                className={`hover:shadow-lg hover:bg-secondary hover:text-blue-50 font-medium px-6 py-3 rounded flex items-center gap-2 ${
+                  theme === "light"
+                    ? "bg-primary text-blue-50"
+                    : "bg-blue-50 text-primary"
+                }`}>
                 Download CV
                 <AiOutlineDownload className="text-2xl animate-bounce" />
               </a>

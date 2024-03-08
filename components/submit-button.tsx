@@ -5,9 +5,11 @@ import { useFormStatus } from "react-dom";
 
 import { FaPaperPlane } from "react-icons/fa";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { useTheme } from "@/context/theme-context";
 
 export default function SubmitBtn() {
   const { pending } = useFormStatus();
+  const { theme } = useTheme();
 
   return (
     <motion.div
@@ -25,7 +27,11 @@ export default function SubmitBtn() {
       <button
         type="submit"
         disabled={pending}
-        className={`group transition-all bg-primary dark:bg-blue-50 text-blue-50 dark:text-primary font-medium px-6 py-3 rounded flex items-center gap-2 ${
+        className={`group transition-all font-medium px-6 py-3 rounded flex items-center gap-2 ${
+          theme === "light"
+            ? "text-blue-50 bg-primary"
+            : "text-primary bg-blue-50"
+        } ${
           pending
             ? "text-opacity-50 bg-primary/70"
             : "hover:scale-110 hover:shadow-lg hover:text-blue-50 hover:bg-secondary"

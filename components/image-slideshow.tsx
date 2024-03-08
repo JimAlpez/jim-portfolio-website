@@ -7,6 +7,7 @@ import Image from "next/image";
 import Image1 from "@/public/Slideshow/Image1.jpg";
 import Image2 from "@/public/Slideshow/Image2.jpg";
 import Image3 from "@/public/Slideshow/Image3.jpg";
+import { useTheme } from "@/context/theme-context";
 
 const images = [
   {
@@ -25,6 +26,7 @@ const images = [
 
 export default function ImageSlideshow() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,7 +39,10 @@ export default function ImageSlideshow() {
   }, []);
 
   return (
-    <div className="relative w-full h-full rounded-xl overflow-hidden shadow-xl border border-sky-950 dark:border-blue-50">
+    <div
+      className={`relative w-full h-full rounded-xl overflow-hidden shadow-xl border ${
+        theme === "light" ? "border-sky-950" : "border-blue-50"
+      }`}>
       {images.map((image, index) => (
         <Image
           key={index}

@@ -7,10 +7,12 @@ import clsx from "clsx";
 import { links } from "@/lib/data";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useEffect, useState } from "react";
+import { useTheme } from "@/context/theme-context";
 
 export default function Header() {
   const [show, setShow] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const { theme } = useTheme();
 
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
@@ -33,7 +35,11 @@ export default function Header() {
       transition={{
         delay: 1.8,
       }}
-      className="z-30 fixed top-0 left-0 right-0 shadow-lg bg-blue-50/50 dark:bg-primary/50 shadow-black/[0.03] backdrop-blur-[0.5rem] py-4 px-6">
+      className={`z-30 fixed top-0 left-0 right-0 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] py-4 px-6 ${
+        theme === "light"
+          ? "text-primary bg-blue-50/50"
+          : "text-blue-50 bg-primary/50"
+      }`}>
       <div className="flex flex-col md:flex-row items-center flex-wrap justify-between w-full max-w-5xl mx-auto">
         <div className="flex items-center justify-between w-full md:w-auto">
           <Link href="/" className="text-2xl font-bold">
@@ -46,16 +52,20 @@ export default function Header() {
             }`}>
             <svg width="18" height="18" viewBox="0 0 18 18">
               <Path
-                stroke={show ? "#3888c4" : "#0f3155"}
+                stroke={
+                  show ? "#3888c4" : theme === "light" ? "#0f3155" : "#eff6ff"
+                }
                 d={show ? "M 3 16.5 L 17 2.5" : "M 2 2.5 L 20 2.5"}
               />
               <Path
-                stroke="#0f3155"
+                stroke={theme === "light" ? "#0f3155" : "#eff6ff"}
                 d="M 2 9.423 L 20 9.423"
                 opacity={show ? 0 : 1}
               />
               <Path
-                stroke={show ? "#3888c4" : "#0f3155"}
+                stroke={
+                  show ? "#3888c4" : theme === "light" ? "#0f3155" : "#eff6ff"
+                }
                 d={show ? "M 3 2.5 L 17 16.346" : "M 2 16.346 L 20 16.346"}
               />
             </svg>

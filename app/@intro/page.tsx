@@ -11,9 +11,11 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 import { AiOutlineMessage } from "react-icons/ai";
 import { RiBlazeLine } from "react-icons/ri";
 import Section from "@/components/section";
+import { useTheme } from "@/context/theme-context";
 
 export default function IntroSection() {
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  const { theme } = useTheme();
 
   return (
     <div className="relative overflow-hidden">
@@ -22,11 +24,16 @@ export default function IntroSection() {
           src={Background}
           alt="Intro Background"
           quality={95}
-          className="-z-10 w-full h-full object-cover absolute top-0 left-0 right-0 bottom-0"></Image>
+          className="w-full h-full object-cover absolute top-0 left-0 right-0 bottom-0"></Image>
 
-        <div className="-z-10 absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-br from-blue-50/70 via-blue-100/70 to-blue-200/70 dark:from-sky-800/70 dark:via-sky-900/70 dark:to-sky-950/70"></div>
+        <div
+          className={`absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-br ${
+            theme === "light"
+              ? "from-blue-50/70 via-blue-100/70 to-blue-200/70"
+              : "from-sky-800/70 via-sky-900/70 to-sky-950/70"
+          }`}></div>
 
-        <div className="min-h-screen flex flex-col md:flex-row-reverse items-center justify-between w-full max-w-5xl mx-auto">
+        <div className="min-h-screen flex flex-col md:flex-row-reverse items-center justify-between gap-y-5 w-full max-w-5xl mx-auto">
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{
@@ -39,8 +46,8 @@ export default function IntroSection() {
                 delay: 1.8,
               },
             }}
-            className="flex-1 pt-28 md:pt-0"
-            viewport={{ once: true, amount: 0.8 }}>
+            viewport={{ once: true, amount: 0.8 }}
+            className="z-10 flex-1 pt-28 md:pt-0">
             <Image
               src={JimAlpez}
               alt="Jim Alpez"
@@ -51,7 +58,7 @@ export default function IntroSection() {
               className="w-[320px] h-[430px] lg:w-[366px] lg:h-[500px] object-cover mx-auto rounded-[183px] border-l-2 border-t-2 border-secondary/20 shadow-lg bg-primary/[0.05]"
             />
           </motion.div>
-          <div className="flex-1 space-y-6 p-6 md:-0">
+          <div className="z-10 flex-1 space-y-6 p-6 md:-0">
             <h1 className="space-y-1">
               <motion.span
                 initial={{ x: -50, opacity: 0 }}
@@ -66,7 +73,10 @@ export default function IntroSection() {
                   },
                 }}
                 className="text-xl md:text-2xl lg:text-3xl font-semibold flex items-center gap-2">
-                <span className="w-7 md:w-9 lg:w-12 h-[2px] rounded-full bg-primary"></span>{" "}
+                <span
+                  className={`w-7 md:w-9 lg:w-12 h-[2px] rounded-full ${
+                    theme === "light" ? "bg-primary" : "bg-blue-50"
+                  }`}></span>{" "}
                 Hi!, I&apos;m
               </motion.span>{" "}
               <motion.span
@@ -83,7 +93,12 @@ export default function IntroSection() {
                 }}
                 className="block text-6xl md:text-7xl lg:text-8xl font-extrabold text-transparent drop-shadow-lg">
                 <span className="text-stroke-secondary">Jim</span>{" "}
-                <span className="text-primary dark:text-blue-50">Alpez</span>
+                <span
+                  className={
+                    theme === "light" ? "text-primary" : "text-blue-50"
+                  }>
+                  Alpez
+                </span>
               </motion.span>
             </h1>
             <motion.h3
@@ -106,7 +121,10 @@ export default function IntroSection() {
                   loop: true,
                 }}
               /> */}
-              <span className="text-primary dark:text-blue-50">Frontend</span>{" "}
+              <span
+                className={theme === "light" ? "text-primary" : "text-blue-50"}>
+                Frontend
+              </span>{" "}
               Web developer
             </motion.h3>
             <motion.p
@@ -138,7 +156,9 @@ export default function IntroSection() {
                   delay: 2,
                 },
               }}
-              className="dark:border-blue-100 border-primary"
+              className={
+                theme === "light" ? "border-primary" : "border-blue-100"
+              }
             />
             <div className="pt-5">
               <motion.div
@@ -163,7 +183,11 @@ export default function IntroSection() {
                 <RiBlazeLine className="text-2xl absolute -top-5 -right-5 rotate-[30deg] animate-pulse group-hover:animate-none" />
                 <Link
                   href="#contact"
-                  className="hover:shadow-lg bg-primary hover:bg-secondary dark:bg-blue-50 text-blue-50 hover:text-blue-50 dark:text-primary font-medium px-6 py-3 rounded flex items-center gap-2"
+                  className={`hover:shadow-lg hover:bg-secondary hover:text-blue-50 font-medium px-6 py-3 rounded flex items-center gap-2 ${
+                    theme === "light"
+                      ? "text-blue-50 bg-primary"
+                      : "text-primary bg-blue-50"
+                  }`}
                   onClick={() => {
                     setActiveSection("Contact");
                     setTimeOfLastClick(Date.now());

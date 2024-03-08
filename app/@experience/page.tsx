@@ -8,6 +8,7 @@ import SectionHeading from "@/components/section-heading";
 import { FaGraduationCap } from "react-icons/fa6";
 import { MdWorkHistory } from "react-icons/md";
 import { FaCalendarAlt } from "react-icons/fa";
+import { useTheme } from "@/context/theme-context";
 
 export default function ExperienceSection() {
   return (
@@ -64,6 +65,8 @@ export default function ExperienceSection() {
 }
 
 const template = (item: any, i: number) => {
+  const { theme } = useTheme();
+
   return (
     <motion.div
       initial={{ y: 50, opacity: 0 }}
@@ -84,7 +87,10 @@ const template = (item: any, i: number) => {
       </div>
       <div className="flex-1">
         <h4 className="text-2xl font-bold line-clamp-1">{item.title}</h4>
-        <h5 className="text-primary/70 dark:text-blue-50/70 text-lg font-bold line-clamp-1">
+        <h5
+          className={`text-lg font-bold line-clamp-1 ${
+            theme === "light" ? "text-primary/70" : "text-blue-50/70"
+          }`}>
           {item.subTitle}
         </h5>
         <div className="text-sm font-medium text-secondary flex items-center gap-2 mt-4">
