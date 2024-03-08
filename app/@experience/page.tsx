@@ -11,6 +11,8 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { useTheme } from "@/context/theme-context";
 
 export default function ExperienceSection() {
+  const { theme } = useTheme();
+
   return (
     <Section sectionView="Experience" id="experience">
       <div className="px-4 py-20 overflow-hidden">
@@ -36,7 +38,7 @@ export default function ExperienceSection() {
               <h3 className="text-3xl font-bold">Education</h3>
             </motion.div>
             <div className="px-4 space-y-8">
-              {EDUCATION_DATA.map((item, i) => template(item, i))}
+              {EDUCATION_DATA.map((item, i) => template(item, i, theme))}
             </div>
           </div>
           <div className="flex-1 space-y-10">
@@ -55,7 +57,7 @@ export default function ExperienceSection() {
               <h3 className="text-3xl font-bold">Experiences</h3>
             </motion.div>
             <div className="px-4 space-y-8">
-              {EXPERIENCE_DATA.map((item, i) => template(item, i))}
+              {EXPERIENCE_DATA.map((item, i) => template(item, i, theme))}
             </div>
           </div>
         </div>
@@ -64,9 +66,7 @@ export default function ExperienceSection() {
   );
 }
 
-const template = (item: any, i: number) => {
-  const { theme } = useTheme();
-
+const template = (item: any, i: number, theme: any) => {
   return (
     <motion.div
       initial={{ y: 50, opacity: 0 }}
