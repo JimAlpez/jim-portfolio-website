@@ -58,7 +58,7 @@ export default function IntroSection() {
               className="w-[320px] h-[430px] lg:w-[366px] lg:h-[500px] object-cover mx-auto rounded-[183px] border-l-2 border-t-2 border-secondary/20 shadow-lg bg-primary/[0.05]"
             />
           </motion.div>
-          <div className="z-10 flex-1 space-y-6 p-6 md:-0">
+          <div className="z-10 flex-1 space-y-6 p-6 mb-8 md:mb-0">
             <h1 className="space-y-1">
               <motion.span
                 initial={{ x: -50, opacity: 0 }}

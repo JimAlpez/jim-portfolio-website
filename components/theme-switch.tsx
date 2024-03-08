@@ -8,7 +8,7 @@ export default function ThemeSwitch() {
 
   return (
     <button
-      className={`fixed bottom-5 right-5 h-[3rem] w-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white/40 shadow-2xl rounded-full grid place-items-center hover:scale-[1.15] active:scale-105 transition-all ${
+      className={`z-50 fixed bottom-5 right-5 h-[3rem] w-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white/40 shadow-2xl rounded-full grid place-items-center hover:scale-[1.15] active:scale-105 transition-all ${
         theme === "light"
           ? "text-primary bg-white/50"
           : "text-blue-50 bg-gray-950"
